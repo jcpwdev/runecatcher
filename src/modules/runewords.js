@@ -835,6 +835,33 @@ class CrescentMoonRuneword extends Runeword {
 
 }
 
+class DoomRuneword extends Runeword {
+    constructor(style) {
+        super();
+
+        this.runes = [Runes.get('hel'),Runes.get('ohm'),Runes.get('um'), Runes.get('lo'), Runes.get('cham')];
+
+        this.properties = [ //todo: correct computing of flat values to Varied Values
+            new Property("Holy Freeze Aura", new PropertyValue(12)),
+            new PropertyCastChance(new Skill("Molten Boulder" , 28), new PropertyValue(5,'%'), 'strike'),
+            new Property('Increased Attack Speed', new PropertyValue(45,'%')),
+            new Property('All Skills', new PropertyValue(2)),
+            new Property('Enhanced Damage', new PropertyValueVaries(280,320, '%')),
+            new Property('Enemy Cold Resistance', new PropertyValueVaries(30,50, '%') , false),
+        ]
+
+        if(style === 'wizard') {
+            this.bases = [Bases.staves];
+            this.properties.push(new Property("Faster Cast Rate" , new PropertyValue(30, "%")));
+        } else {
+            this.bases = [Bases.axes, Bases.hammers, Bases.polearms, Bases.swords, Bases.spears];
+            this.properties.push(new Property( 'Prevent Monster Heal' , false));
+        }
+
+    }
+
+}
+
 
 class EternityRuneword extends Runeword {
     constructor() {
@@ -1935,6 +1962,8 @@ var Runewords = [
     new ChaosRuneword,
     new CrescentMoonRuneword('twohanded'),
     new CrescentMoonRuneword('onehanded'),
+    new DoomRuneword('fighter'),
+    new DoomRuneword('wizard'),
     new EternityRuneword,
     new FamineRuneword,
     new FortitudeRuneword(Bases.allWeapons()),

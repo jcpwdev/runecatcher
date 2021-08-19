@@ -1047,7 +1047,7 @@ class WindRuneword extends Runeword {
             new Property('Increased Attack Speed', new PropertyValue(40, '%')),
             new Property('Enhanced Damage' , new PropertyValueVaries(420, 480,'%')),
             new Property('Faster Run/Walk' , new PropertyValueVaries(20, 30,'%')),
-            new Property('Target Defense' , new PropertyValue(50, '%'), false)
+            new Property('Targets Defense' , new PropertyValue(50, '%'), false)
         ]
 
     }
@@ -1205,10 +1205,10 @@ class LawbringerRuneword extends Runeword {
 
         this.runes = [Runes.get('amn'),Runes.get('lem'),Runes.get('ko')];
 
-        this.bases = [Bases.hammers, Bases.scepters, Bases.swords];
+        this.bases = [Bases.hammers, Bases.scepters, Bases.swords, Bases.claws];
 
         this.properties = [
-            new PropertyCastChance( new Skill('Decrepify', 15), new PropertyValue(20, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Amplify Damage', 15), new PropertyValue(20, '%'), 'strike'),
             new Property('Sanctuary Aura' , new PropertyValueVaries(16,18)),
             new Property('Targets Defense' , new PropertyValue(50,  '%'), false),
             new Property('Fire Damage' , new PropertyValueRange(150, 210)),

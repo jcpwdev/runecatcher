@@ -238,7 +238,6 @@ class SpiritRuneword extends Runeword {
         this.bases = bases;
 
         this.properties = [
-            new Property('All Skills', new PropertyValue(1)),
             new Property('Faster Cast Rate', new PropertyValueVaries(25,35, '%')),
             new Property('Faster Hit Recovery', new PropertyValue(25, '%')),
             new Property('Defense vs. Missiles', new PropertyValue(250)),
@@ -246,6 +245,23 @@ class SpiritRuneword extends Runeword {
             new Property('Mana', new PropertyValueVaries(59,82)),
             new Property('Magic Absorb', new PropertyValueVaries(3,8))
         ]
+
+
+        if(this.bases.indexOf(Bases.shield) !== -1) {
+            this.properties.push(
+                new Property('Requirements', new PropertyValue(15), false)
+            );
+        }
+
+        if(this.bases.indexOf(Bases.staves) !== -1) {
+            this.properties.push(
+                new Property('All Skills', new PropertyValue(2))
+            );
+        } else {
+            this.properties.push(
+                new Property('All Skills', new PropertyValue(1))
+            );
+        }
     }
 }
 
@@ -1944,6 +1960,7 @@ var Runewords = [
     new SteelRuneword,
     new SpiritRuneword(Bases.allShields()),
     new SpiritRuneword([Bases.swords]),
+    new SpiritRuneword([Bases.staves]),
     new StealthRuneword,
     new PledgeOfTheAncientsRuneword,
     new SilenceRuneword,

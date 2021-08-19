@@ -1929,8 +1929,8 @@ class LastWishRuneword extends Runeword {
         this.properties = [
             new PropertyCastChance( new Skill('Fade', 11), new PropertyValue(6, '%'), 'struck'),
             new PropertyCastChance( new Skill('Life Tap', 18), new PropertyValue(10, '%'), 'strike'),
-            new PropertyCastChance( new Skill('Charged Bolt', 20), new PropertyValue(20, '%'), 'strike'),
-            new Property('Enhanced Damage', new PropertyValueVaries(330,375,'%')),
+            new PropertyCastChance( new Skill('Charged Bolt', 40), new PropertyValue(60, '%'), 'attack'),
+            new Property('Enhanced Damage', new PropertyValueVaries(450,500,'%')),
             new Property('Chance of Crushing Blow', new PropertyValueVaries(40,50,'%')),
             new Property('Might Aura', new PropertyValue(17)),
             new Property('Better Chance of Getting Magic Items' , new PropertyValueScales(0.5 , '%'))

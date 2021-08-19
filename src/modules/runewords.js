@@ -1029,18 +1029,18 @@ class WindRuneword extends Runeword {
     constructor() {
         super();
 
-        this.runes = [Runes.get('sur'),Runes.get('sur'),Runes.get('el')];
+        this.runes = [Runes.get('sur'),Runes.get('el')];
 
         this.bases = Bases.allMeleeWeapons();
 
         this.properties = [
-            new PropertyCastChance( new Skill('Tornado', 29), new PropertyValue(8, '%'), 'strike'),
-            new PropertyCastChance( new Skill('Twister', 25), new PropertyValue(8, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Tornado', 29), new PropertyValue(18, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Twister', 25), new PropertyValue(18, '%'), 'strike'),
             new PropertyCastChance( new Skill('Cyclone Armor', 9), new PropertyValue(5, '%'), 'strike'),
-            new PropertyCastChance( new Skill('Hurricane', 9), new PropertyValue(5, '%'), 'struck'),
             new Property('Increased Attack Speed', new PropertyValue(40, '%')),
-            new Property('Enhanced Damage' , new PropertyValueVaries(160, 240,'%')),
+            new Property('Enhanced Damage' , new PropertyValueVaries(420, 480,'%')),
             new Property('Faster Run/Walk' , new PropertyValueVaries(20, 30,'%')),
+            new Property('Target Defense' , new PropertyValue(50, '%'), false)
         ]
 
     }

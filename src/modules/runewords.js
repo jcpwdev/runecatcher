@@ -543,7 +543,7 @@ class MaliceRuneword extends Runeword {
             new Property('Monster Defense per Hit', new PropertyValue(100, ), false),
             new Property('Prevent Monster Heal', false),
             new Property('Drain Life', new PropertyValue(5) , false), //todo: or replenish?
-            new Property('Life Gained After Each Hit', new PropertyValue(2)),
+            new Property('Life Gained After Each Hit', new PropertyValue(2))
 
         ]
 
@@ -564,8 +564,8 @@ class MemoryRuneword extends Runeword {
             new Property('Faster Cast Rate', new PropertyValue(33, '%')),
             new Property('Energy Shield', new PropertyValue(3), true, 'Sorceress'),
             new Property('Static Field', new PropertyValue(2), true, 'Sorceress'),
-            new Property('Increase Maximum Mana', new PropertyValue(20, '%' )),
-            new Property('Magic Damage Reduced', new PropertyValue(7 )),
+            new Property('Increase Maximum Mana', new PropertyValueVaries(20, 40,'%' )),
+            new Property('Magic Damage Reduced', new PropertyValue(7 ))
 
         ]
 

@@ -408,13 +408,13 @@ class FuryRuneword extends Runeword {
         this.bases = Bases.allMeleeWeapons();
 
         this.properties = [
-            new Property('Enhanced Damage', new PropertyValueVaries(209, 269, '%')),
+            new Property('Enhanced Damage', new PropertyValueVaries(239, 269, '%')),
             new Property('Increased Attack Speed', new PropertyValue(40,'%')),
             new Property('Chance of Open Wounds', new PropertyValueVaries(33,66, '%')),
-            new Property('Prevent Monster Heal', false),
-            new Property('Deadly Strike', new PropertyValue(33, '%')),
+            new Property('Deadly Strike', new PropertyValueVaries(33,66, '%')),
             new Property('Life Stolen per Hit', new PropertyValue(6, '%')),
-            new Property('Frenzy', new PropertyValue(5), true, 'Barbarian')
+            new Property('Frenzy', new PropertyValue(5), true, 'Barbarian'),
+            new Property('Indestructible', false)
         ]
 
     }

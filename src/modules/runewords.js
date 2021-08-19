@@ -120,10 +120,10 @@ class Runeword {
                 propertyStack.sort((propA, propB)=>{
 
                     let propertyWorth = {
-                        'PropertyValue' : 3,
-                        'PropertyValueDuration' : 2,
-                        'PropertyValueRange' : 1,
-                        'PropertyValueVaries' : 0
+                        'PropertyValue' : 0,
+                        'PropertyValueDuration' : 1,
+                        'PropertyValueRange' : 2,
+                        'PropertyValueVaries' : 3
                     }
 
                     return propertyWorth[propA.constructor.name] - propertyWorth[propB.constructor.name]
@@ -159,7 +159,8 @@ class Runeword {
                     let newValue = currentValue + addedValue;
                     combinedProperty.value.minValue = Math.abs(newValue);
 
-                    if(constructor.name === 'PropertyValueVaries' || constructor.name === 'PropertyValueRange') {
+                    if(combinedProperty.value.constructor.name === 'PropertyValueVaries' || combinedProperty.value.constructor.name === 'PropertyValueRange') {
+
                         let currentMaxValue = parseInt((combinedProperty.positive ? '+' : '-') + combinedProperty.value.maxValue);
                         if(property.value.constructor.name === 'PropertyValueVaries' || property.value.constructor.name === 'PropertyValueRange') {
                             addedValue = parseInt((property.positive ? '+' : '-') + property.value.maxValue);

@@ -573,7 +573,7 @@ class MaliceRuneword extends Runeword {
             new Property('Chance of Open Wounds', new PropertyValue(100, '%')),
             new Property('Monster Defense per Hit', new PropertyValue(100, ), false),
             new Property('Prevent Monster Heal', false),
-            new Property('Drain Life', new PropertyValue(5) , false), //todo: or replenish?
+            new Property('Drain Life', new PropertyValue(5) , false), //todo: or negative "replenish"?
             new Property('Life Gained After Each Hit', new PropertyValue(2))
 
         ]
@@ -695,7 +695,7 @@ class InfinityRuneword extends Runeword {
 
 }
 
-class VenomRuneword extends Runeword { // todo: other dot dmg
+class VenomRuneword extends Runeword {
     constructor() {
         super();
 
@@ -878,7 +878,7 @@ class DoomRuneword extends Runeword {
 
         this.runes = [Runes.get('hel'),Runes.get('ohm'),Runes.get('um'), Runes.get('lo'), Runes.get('cham')];
 
-        this.properties = [ //todo: correct computing of flat values to Varied Values
+        this.properties = [
             new Property("Holy Freeze Aura", new PropertyValue(12)),
             new PropertyCastChance(new Skill("Molten Boulder" , 28), new PropertyValue(5,'%'), 'strike'),
             new Property('Increased Attack Speed', new PropertyValue(45,'%')),
@@ -2010,7 +2010,7 @@ var Runewords = [
     new EternityRuneword,
     new FamineRuneword,
     new FortitudeRuneword(Bases.allWeapons()),
-    new FortitudeRuneword(Bases.allArmors()), // todo: Dol bonus: +10 or +7 replenish life
+    new FortitudeRuneword(Bases.allArmors()),
     new HarmonyRuneword,
     new HeartOfTheOakRuneword,
     new KingslayerRuneword,

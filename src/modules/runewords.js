@@ -1235,7 +1235,6 @@ class OathRuneword extends Runeword {
             new Property('Enhanced Damage' , new PropertyValueVaries(210,340,  '%')),
             new Property('Magic Absorb' , new PropertyValueVaries(10,15)),
             new Property('Heart of the Wolverine' , new PropertyValue(8)),
-            new Property('Iron Golem' , new PropertyValue(8)),
             new Property('Indestructible' ,false),
         ]
 

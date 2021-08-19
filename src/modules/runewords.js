@@ -1837,6 +1837,7 @@ class SanctuaryRuneword extends Runeword {
             new Property('Enhanced Defense', new PropertyValueVaries(130,160, '%')),
             new Property('All Resistances', new PropertyValueVaries(35,50, '%')),
             new Property('Cannot be Frozen', false),
+            new PropertyCharges(new Skill('Slow Movement' , 12), new PropertyValue(60))
         ]
 
     }
@@ -1855,7 +1856,7 @@ class SplendorRuneword extends Runeword {
             new Property('Faster Cast Rate', new PropertyValueVaries(20, 35, '%')),
             new Property('Faster Block Rate', new PropertyValue(20, '%')),
             new Property('Enhanced Defense', new PropertyValueVaries(60,100, '%')),
-            new Property('Better Chance of Getting Magic Items', new PropertyValueVaries(15,30, '%')),
+            new Property('Better Chance of Getting Magic Items', new PropertyValueVaries(20,30, '%')),
             new Property('Light Radius', new PropertyValue(3))
         ]
 

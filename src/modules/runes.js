@@ -276,7 +276,7 @@ let Runes = {
             super();
 
             this.properties = {
-                weapon : new Property('Replenish Life' , new PropertyValue(15)),
+                weapon : new Property('Enhanced Damage' , new PropertyValue(25,'%')),
                 armor : new Property('Replenish Life' , new PropertyValue(10)),
                 helmet : new Property('Replenish Life' , new PropertyValue(10)),
                 shield : new Property('Replenish Life' , new PropertyValue(10))

@@ -1713,7 +1713,8 @@ class PeaceRuneword extends Runeword {
         this.bases = Bases.allArmors();
 
         this.properties = [
-            new PropertyCastChance( new Skill('Valkyrie', 15), new PropertyValue(2, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Slow Movement', 12), new PropertyValue(8, '%'), 'strike'),
+            new Property('Summon 1 additional Valkyrie', false),
             new Property('Amazon Skills', new PropertyValue(2)),
             new Property('Critical Strike', new PropertyValue(2))
         ]

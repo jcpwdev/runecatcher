@@ -1751,7 +1751,7 @@ class TreacheryRuneword extends Runeword {
         this.bases = Bases.allArmors();
 
         this.properties = [
-            new PropertyCastChance( new Skill('Lesser Fade', 15), new PropertyValue(30, '%'), 'struck'),
+            new PropertyCastChance( new Skill('Psychic Hammer', 25), new PropertyValue(35, '%'), 'struck'),
             new PropertyCastChance( new Skill('Venom', 25), new PropertyValue(25, '%'), 'strike'),
             new Property('Assassin Skills', new PropertyValue(2)),
             new Property('Increased Attack Speed', new PropertyValue(45,'%'))

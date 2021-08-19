@@ -869,15 +869,16 @@ class EternityRuneword extends Runeword {
 
         this.runes = [Runes.get('amn'),Runes.get('ber'),Runes.get('ist'),Runes.get('sol'),Runes.get('sur')];
 
-        this.bases = Bases.allWeapons();
+        this.bases = Bases.allMeleeWeapons();
 
         this.properties = [
             new Property('Enhanced Damage', new PropertyValueVaries(260,310,'%')),
             new Property('Damage', new PropertyValueRange(70,71)),
             new Property('Indestructible', false),
             new Property('Cannot be Frozen', false),
-            new Property('Reanimate as: Returned', new PropertyValue(10, '%')),
+            new Property('Reanimate as: Wraith', new PropertyValue(10, '%')),
             new Property('Revive', new PropertyValue(3, )),
+            new Property('Additional Revives', new PropertyValue(6 )),
         ]
 
     }

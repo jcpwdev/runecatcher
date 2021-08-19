@@ -668,11 +668,11 @@ class VenomRuneword extends Runeword { // todo: other dot dmg
 
         this.properties = [
             new Property('Ignore Targets Defense', false),
+            new Property('Poison Dagger' , new PropertyValueVaries(2,3)),
             new Property('Mana Stolen per Hit', new PropertyValue(7, '%')),
             new PropertyCharges(new Skill('Desecrate', 15), new PropertyValue(27)),
             new PropertyCastChance( new Skill('Poison Nova', 23), new PropertyValue(30, '%'), 'kill'),
-            new Property('Enemy Poison Resistance', new PropertyValueVaries(10, 20, '%'), false),
-            new Property('Poison Damage', new PropertyValueDuration(198,6))
+            new Property('Enemy Poison Resistance', new PropertyValueVaries(10, 30, '%'), false)
         ]
 
     }

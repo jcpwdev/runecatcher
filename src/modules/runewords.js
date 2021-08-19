@@ -333,7 +333,7 @@ class SilenceRuneword extends Runeword { //todo: DOL effect removed in pd2????
 
 }
 
-class PatternRuneword extends Runeword { //todo: no tal bonus in pd2?
+class PatternRuneword extends Runeword {
     constructor() {
         super();
 
@@ -343,7 +343,7 @@ class PatternRuneword extends Runeword { //todo: no tal bonus in pd2?
 
         this.properties = [
             new Property('Attack Rating', new PropertyValue(10, '%')),
-            new Property('Enhanced Damage', new PropertyValueVaries(40,80, '%')),
+            new Property('Enhanced Damage', new PropertyValueVaries(80,120, '%')),
             new Property('Fire Damage', new PropertyValueRange(17,62)),
             new Property('All Resistances', new PropertyValue(15,'%')),
             new Property('Strength', new PropertyValue(6)),

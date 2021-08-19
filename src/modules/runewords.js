@@ -1348,13 +1348,13 @@ class VoiceOfReasonRuneword extends Runeword {
 
         this.runes = [Runes.get('lem'),Runes.get('ko'),Runes.get('el'),Runes.get('eld')];
 
-        this.bases = [Bases.swords, Bases.maces];
+        this.bases = [Bases.swords, Bases.maces, Bases.missileweapons];
 
         this.properties = [
             new PropertyCastChance( new Skill('Frozen Orb', 16), new PropertyValue(15, '%'), 'strike'),
             new PropertyCastChance( new Skill('Ice Blast', 20), new PropertyValue(18, '%'), 'strike'),
-            new Property('Damage to Demons' , new PropertyValueVaries(220, 350, '%')),
-            new Property('Damage to Undead' , new PropertyValueVaries(280, 300, '%')),
+            new Property('Damage to Demons' , new PropertyValueVaries(170, 300, '%')),
+            new Property('Damage to Undead' , new PropertyValueVaries(130, 250, '%')),
             new Property('Cold Damage' , new PropertyValueRange(200, 320)),
             new Property('Enemy Cold Resistance' , new PropertyValue(24, '%') , false),
             new Property('Cannot be Frozen' ,false),

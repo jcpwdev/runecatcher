@@ -967,6 +967,7 @@ class HeartOfTheOakRuneword extends Runeword {
             new Property('Faster Cast Rate' , new PropertyValue(30,'%')),
             new Property('All Resistances', new PropertyValueVaries(20,30, '%')),
             new PropertyCharges(new Skill('Raven', 14), new PropertyValue(60)),
+            new PropertyCharges(new Skill('Oak Sage', 4), new PropertyValue(25)),
             new Property('Replenish Life', new PropertyValue(20)),
             new Property('Increase Maximum Mana', new PropertyValue(15, '%')),
         ]

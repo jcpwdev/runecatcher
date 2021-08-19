@@ -256,7 +256,7 @@ class SteelRuneword extends Runeword {
 
         this.runes = [Runes.get('tir'), Runes.get('el')];
 
-        this.bases = [Bases.swords, Bases.axes, Bases.maces];
+        this.bases = [Bases.swords, Bases.axes, Bases.maces , Bases.claws];
 
         this.properties = [
             new Property('Increased Attack Speed', new PropertyValue(25, '%')),

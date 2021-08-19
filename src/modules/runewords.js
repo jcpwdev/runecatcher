@@ -470,7 +470,7 @@ class KingsGraceRuneword extends Runeword {
 
         this.runes = [Runes.get('amn'),Runes.get('ral'),Runes.get('thul')];
 
-        this.bases = [Bases.swords, Bases.scepters];
+        this.bases = [Bases.swords, Bases.scepters, Bases.claws];
 
         this.properties = [
             new Property('Enhanced Damage', new PropertyValue(100, '%')),

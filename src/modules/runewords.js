@@ -90,6 +90,11 @@ class Runeword {
         let sortedProperties = {};
         let computedProperties = [];
 
+        // sort properties by name and unit into a two-dimensional array
+        // array keys are then :
+        // "Enhanced Damage%"
+        // "Cold Resist%"
+        // "Enhanced Damage__nounit"
         for ( let property of this.getProperties()) {
 
             let suffix = (property.value ? (property.value.unit ? property.value.unit : '__nounit') : '__novalue');
@@ -107,16 +112,20 @@ class Runeword {
 
         }
 
+
+        // try to calculate everything together that is in one stack
         for ( let propertyStackName in sortedProperties) {
 
             let propertyStack = sortedProperties[propertyStackName];
 
+            // only contains 1? -> pass through
             if(propertyStack.length === 1) {
 
                 computedProperties.push(propertyStack[0]);
 
             } else if(propertyStack.length > 1) {
 
+                // some sorting
                 propertyStack.sort((propA, propB)=>{
 
                     let propertyWorth = {
@@ -130,6 +139,7 @@ class Runeword {
 
                 });
 
+                // pull the first property from the stack out - we will use it as master property, which gets changed by all other properties in the stack
                 let combinedPropertyValue;
                 if(propertyStack[0].value !== false) {
 
@@ -145,10 +155,12 @@ class Runeword {
                     combinedPropertyValue = false;
                 }
 
+                // our new master property for this stack
                 let combinedProperty = new Property(propertyStack[0].name, combinedPropertyValue , propertyStack[0].positive, propertyStack[0].classSpecific);
 
-                delete propertyStack[0];
+                delete propertyStack[0]; // delete the old base of our master property
 
+                // go through the remaining properties and try to add them on the master property
                 for (let property of propertyStack) {
                     if(typeof property === 'undefined' || property.value === false) continue;
 
@@ -159,6 +171,7 @@ class Runeword {
                     let newValue = currentValue + addedValue;
                     combinedProperty.value.minValue = Math.abs(newValue);
 
+                    // if our master prop has 2 values (min and max) add the value on both of them
                     if(combinedProperty.value.constructor.name === 'PropertyValueVaries' || combinedProperty.value.constructor.name === 'PropertyValueRange') {
 
                         let currentMaxValue = parseInt((combinedProperty.positive ? '+' : '-') + combinedProperty.value.maxValue);
@@ -172,6 +185,7 @@ class Runeword {
                     combinedProperty.positive = newValue >= 0;
                 }
 
+                // we have combined a full stack of identical properties into one - push it!
                 computedProperties.push(combinedProperty);
             }
         }

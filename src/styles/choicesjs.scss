@@ -1,0 +1,38 @@
+.choices {
+  margin-bottom: 0;
+
+  .choices__inner {
+    border-radius: 4px;
+  }
+
+  .choices__list--multiple .choices__item.is-highlighted,
+  .choices__list--multiple .choices__item {
+    background: #2a2a2a;
+    border-color: #494949;
+
+    .choices__button {
+      border-left-color: #7f7f7f;
+    }
+  }
+}
+.property-choices {
+  max-width: 1200px;
+  margin: 30px auto 0;
+
+  .choices__inner {
+    padding: 10px 10px 5px;
+    border: 2px solid $darkgrey;
+  }
+}
+
+.base-choices {
+  min-width: 50%;
+  margin-right: $atom;
+  max-width: 100%;
+  margin-bottom: $atom;
+
+  .choices__inner {
+    padding: 5px 5px 0;
+    min-height: 34px;
+  }
+}

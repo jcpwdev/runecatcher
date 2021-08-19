@@ -809,22 +809,27 @@ class ChaosRuneword extends Runeword {
 }
 
 class CrescentMoonRuneword extends Runeword {
-    constructor() {
+    constructor(style) {
         super();
 
         this.runes = [Runes.get('shael'),Runes.get('um'),Runes.get('tir')];
 
-        this.bases = [Bases.axes, Bases.swords, Bases.polearms, Bases.spears];
-
         this.properties = [
             new PropertyCastChance( new Skill('Chain Lightning', 27), new PropertyValue(10, '%'), 'strike'),
-            new PropertyCastChance( new Skill('Static Field', 13), new PropertyValue(7, '%'), 'strike'),
             new Property('Enhanced Damage', new PropertyValueVaries(180,220,'%')),
             new Property('Ignore Targets Defense', false),
-            new Property('Enemy Lightning Resistance', new PropertyValue(35, '%'), false),
-            new Property('Magic Absorb', new PropertyValueVaries(9, 11)),
+            new Property('Enemy Lightning Resistance', new PropertyValueVaries(5,15, '%'), false),
+            new Property('Magic Absorb', new PropertyValueVaries(3, 5)),
             new PropertyCharges(new Skill('Summon Spirit Wolf', 18), new PropertyValue(30))
         ]
+
+        if(style === 'twohanded') {
+            this.bases = [Bases.polearms, Bases.spears];
+            this.properties.push(new PropertyCastChance( new Skill('Static Field', 13), new PropertyValue(24, '%'), 'strike'));
+        } else {
+            this.bases = [Bases.axes, Bases.swords, Bases.claws];
+            this.properties.push(new PropertyCastChance( new Skill('Static Field', 13), new PropertyValue(12, '%'), 'strike'));
+        }
 
     }
 
@@ -1928,7 +1933,8 @@ var Runewords = [
     new BreathOfTheDyingRuneword,
     new CallToArmsRuneword,
     new ChaosRuneword,
-    new CrescentMoonRuneword,
+    new CrescentMoonRuneword('twohanded'),
+    new CrescentMoonRuneword('onehanded'),
     new EternityRuneword,
     new FamineRuneword,
     new FortitudeRuneword(Bases.allWeapons()),

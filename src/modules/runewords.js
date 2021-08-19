@@ -1636,9 +1636,9 @@ class BoneRuneword extends Runeword {
         this.bases = Bases.allArmors();
 
         this.properties = [
-            new PropertyCastChance( new Skill('Bone Armor', 10), new PropertyValue(5, '%'), 'struck'),
-            new PropertyCastChance( new Skill('Bone Spear', 10), new PropertyValue(15, '%'), 'strike'),
-            new Property('Necromancer Skills', new PropertyValue(1)),
+            new PropertyCastChance( new Skill('Bone Armor', 15), new PropertyValue(10, '%'), 'struck'),
+            new PropertyCastChance( new Skill('Bone Spear', 25), new PropertyValue(30, '%'), 'strike'),
+            new Property('Necromancer Skills', new PropertyValue(2)),
             new Property('Mana', new PropertyValueVaries(100,150))
         ]
 

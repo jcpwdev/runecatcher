@@ -1915,6 +1915,7 @@ class RadianceRuneword extends Runeword {
 
         this.properties = [
             new Property('Enhanced Defense', new PropertyValue(75, '%')),
+            new Property('Enhanced Damage', new PropertyValueVaries(20,40, '%')),
             new Property('Energy', new PropertyValue(10)),
             new Property('Mana', new PropertyValue(33)),
             new Property('Vitality', new PropertyValue(10)),
@@ -1937,7 +1938,6 @@ class DeliriumRuneword extends Runeword {
         this.properties = [
             new Property('All Skills', new PropertyValue(2)),
             new PropertyCastChance( new Skill('Confuse', 18), new PropertyValue(11, '%'), 'strike'),
-            new PropertyCastChance( new Skill('Delirium', 50), new PropertyValue(1, '%'), 'struck'),
             new PropertyCastChance( new Skill('Mind Blast', 14), new PropertyValue(6, '%'), 'struck'),
             new PropertyCastChance( new Skill('Terror', 13), new PropertyValue(14, '%'), 'struck'),
             new Property('Enhanced Defense', new PropertyValue(261)),

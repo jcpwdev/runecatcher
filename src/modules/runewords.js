@@ -641,7 +641,7 @@ class HandOfJusticeRuneword extends Runeword {
         this.properties = [
             new Property('Increased Attack Speed', new PropertyValue(33, '%')),
             new Property('Enhanced Damage', new PropertyValueVaries(280,330, '%')),
-            new Property('Holy Fire Aura', new PropertyValue(16)),
+            new Property('Holy Fire Aura', new PropertyValue(12)),
             new PropertyCastChance( new Skill('Blaze', 26), new PropertyValue(100, '%'), 'levelup'),
             new PropertyCastChance( new Skill('Meteor', 48), new PropertyValue(100, '%'), 'death'),
             new Property('Ignore Targets Defense', false),

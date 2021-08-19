@@ -384,7 +384,7 @@ class BlackRuneword extends Runeword {
 
         this.runes = [Runes.get('thul'),Runes.get('io'),Runes.get('nef')];
 
-        this.bases = [Bases.maces, Bases.hammers];
+        this.bases = [Bases.maces, Bases.hammers, Bases.claws];
 
         this.properties = [
             new Property('Enhanced Damage', new PropertyValue(120, '%')),

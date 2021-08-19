@@ -1529,7 +1529,7 @@ class PrudenceRuneword extends Runeword {
 
         this.properties = [
             new Property('Faster Hit Recovery', new PropertyValue(25,'%')),
-            new Property('Faster Cast Rate', new PropertyValue(20,'%')),
+            new Property('Faster Cast Rate', new PropertyValue(30,'%')),
             new Property('Enhanced Defense', new PropertyValueVaries(140, 170, '%')),
             new Property('All Resistances', new PropertyValueVaries(25, 35, '%')),
             new Property('Damage Reduced', new PropertyValueVaries(5,13)),

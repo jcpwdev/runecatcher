@@ -130,7 +130,7 @@ let Runes = {
             super();
     
             this.properties = {
-                weapon : new Property('Target Defense' , new PropertyValue(25, '%') , false),
+                weapon : new Property('Targets Defense' , new PropertyValue(25, '%') , false),
                 armor : new Property('Regenerate Mana' , new PropertyValue(15, '%')),
                 helmet : new Property('Regenerate Mana' , new PropertyValue(15, '%')),
                 shield : new Property('Regenerate Mana' , new PropertyValue(15, '%'))

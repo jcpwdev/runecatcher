@@ -1055,8 +1055,8 @@ class BrandRuneword extends Runeword {
         this.bases = [Bases.missileweapons];
 
         this.properties = [
-            new PropertyCastChance( new Skill('Amplify Damage', 14), new PropertyValue(25, '%'), 'struck'),
-            new PropertyCastChance( new Skill('Twister', 35), new PropertyValue(35, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Amplify Damage', 14), new PropertyValue(65, '%'), 'struck'),
+            new PropertyCastChance( new Skill('Bone Spear', 50), new PropertyValue(50, '%'), 'strike'),
             new Property('Knockback' , false),
             new Property('Fires Explosive Arrows or Bolts' , new PropertyValue(15)),
             new Property('Enhanced Damage' , new PropertyValueVaries(260, 340,'%')),

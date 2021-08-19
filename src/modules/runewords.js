@@ -512,15 +512,15 @@ class InsightRuneword extends Runeword {
 
         this.runes = [Runes.get('ral'),Runes.get('tir'), Runes.get('tal') , Runes.get('sol')];
 
-        this.bases = [Bases.staves, Bases.polearms, Bases.spears];
+        this.bases = [Bases.staves, Bases.polearms, Bases.spears , Bases.scepters];
 
         this.properties = [
             new Property('Meditation Aura', new PropertyValueVaries(12, 17)),
             new Property('Faster Cast Rate', new PropertyValue(35, '%')),
-            new Property('Enhanced Damage', new PropertyValueVaries(200, 260, '%')),
+            new Property('Enhanced Damage', new PropertyValueVaries(120, 180, '%')),
             new Property('Attack Rating', new PropertyValueVaries(180, 250, '%')),
             new Property('Critical Strike', new PropertyValueVaries(1, 6)),
-            new Property('All Attributes', new PropertyValue(5)),
+            new Property('All Attributes', new PropertyValueVaries(10,20)),
             new Property('Better Chance of Getting Magic Items', new PropertyValue(23, '%')),
 
         ]

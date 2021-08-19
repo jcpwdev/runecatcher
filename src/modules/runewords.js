@@ -15,7 +15,7 @@ class Runeword {
 
     constructor() {
         if (new.target === Runeword) {
-            throw new TypeError("Cannot construct a Runeword Class instances directly");
+            throw new TypeError("Cannot construct a Runeword Class instance directly");
         }
         this.name = this.name();
     }
@@ -1244,7 +1244,7 @@ class PhoenixRuneword extends Runeword { // weapon stats weird
     }
 }
 
-class PrideRuneword extends Runeword { // todo: sur changes correct?
+class PrideRuneword extends Runeword {
     constructor() {
         super();
 
@@ -1256,7 +1256,7 @@ class PrideRuneword extends Runeword { // todo: sur changes correct?
             new PropertyCastChance( new Skill('Fire Wall', 17), new PropertyValue(25, '%'), 'struck'),
             new Property('Concentration Aura' , new PropertyValueVaries(16, 20)),
             new Property('Attack Rating' , new PropertyValueVaries(260, 300,  '%')),
-            new Property('Damage to Demons' , new PropertyValueScales(4,  '%')),
+            new Property('Enhanced Maximum Damage' , new PropertyValueScales(3,  '%')),
             new Property('Extra Gold From Monsters' , new PropertyValueScales(1.875,  '%')),
             new Property('Lightning Damage' ,new PropertyValueRange(50, 280)),
             new Property('Replenish Life' , new PropertyValue(8)),

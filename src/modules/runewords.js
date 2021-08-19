@@ -894,7 +894,7 @@ class FamineRuneword extends Runeword {
         this.bases = [Bases.axes, Bases.hammers, Bases.swords];
 
         this.properties = [
-            new Property('Enhanced Damage', new PropertyValueVaries(220,270,'%')),
+            new Property('Enhanced Damage', new PropertyValueVaries(270,320,'%')),
             new Property('Increased Attack Speed', new PropertyValue(30, '%')),
             new Property('Indestructible', false),
             new Property('Enemy Lightning Resistance', new PropertyValueVaries(10, 20, '%'), false),

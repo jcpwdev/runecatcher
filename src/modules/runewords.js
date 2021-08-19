@@ -310,7 +310,7 @@ class PledgeOfTheAncientsRuneword extends Runeword {
     }
 
 }
-class SilenceRuneword extends Runeword { //todo: DOL effect removed in pd2????
+class SilenceRuneword extends Runeword {
     constructor() {
         super();
 
@@ -322,11 +322,12 @@ class SilenceRuneword extends Runeword { //todo: DOL effect removed in pd2????
             new Property('All Skills',  new PropertyValue(2)),
             new Property('Increased Attack Speed',  new PropertyValue(20 , '%')),
             new Property('Faster Hit Recovery',  new PropertyValue(20 , '%')),
-            new Property('Enhanced Damage', new PropertyValue(200 , '%')),
+            new Property('Enhanced Damage', new PropertyValueVaries(300, 400 , '%')),
             new Property('Mana Stolen per Hit', new PropertyValue(4 , '%')),
             new Property('Hit blinds Target', new PropertyValue(33 )),
-            new Property('All Resistances', new PropertyValue(75, '%' )),
-            new Property('Replenish Life', new PropertyValue(15,  ))
+            new Property('All Resistances', new PropertyValue(50, '%' )),
+            new Property('Replenish Life', new PropertyValue(15,  )),
+            new Property('Thorns Aura', new PropertyValueVaries(23,25))
         ];
 
     }

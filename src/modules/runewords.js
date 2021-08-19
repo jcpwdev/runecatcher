@@ -637,22 +637,29 @@ class HandOfJusticeRuneword extends Runeword {
 }
 
 class InfinityRuneword extends Runeword {
-    constructor() {
+    constructor(style = "default") {
         super();
 
         this.runes = [Runes.get('ber'),Runes.get('mal'),Runes.get('ber'),Runes.get('ist')];
 
-        this.bases = [Bases.polearms];
+        this.bases = [Bases.polearms, Bases.spears];
 
         this.properties = [
-            new PropertyCastChance( new Skill('Chain Lightning', 20), new PropertyValue(50, '%'), 'kill'),
+            new PropertyCastChance( new Skill('Lightning', 20), new PropertyValue(50, '%'), 'kill'),
             new Property('Enhanced Damage', new PropertyValueVaries(255,325, '%')),
             new Property('Conviction Aura', new PropertyValue(12)),
             new Property('Faster Run/Walk', new PropertyValue(35, '%')),
             new Property('Vitality', new PropertyValueScales(0.5)),
             new Property('Enemy Lightning Resistance', new PropertyValueVaries(45,55, '%'),false),
-            new PropertyCharges(new Skill('Cyclone Armor', 21), new PropertyValue(30))
+            new Property('Cyclone Armor', new PropertyValue(3))
         ]
+
+        if(style === "staves") {
+            this.bases = [Bases.staves];
+            this.properties.push(
+                new Property('Faster Cast Rate' , new PropertyValue(35, '%'))
+            )
+        }
 
     }
 
@@ -2021,6 +2028,7 @@ var Runewords = [
     new DeliriumRuneword,
     new HandOfJusticeRuneword,
     new InfinityRuneword,
+    new InfinityRuneword('staves'),
     new LastWishRuneword
 
 ];

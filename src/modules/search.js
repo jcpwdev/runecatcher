@@ -88,7 +88,10 @@ class Search {
 
         for(var runeword of Runewords){
 
-            choicesSet.add({ value : 'RW:' + runeword.name , label: runeword.name + ' (Runeword)'});
+            if(!checkSet.has('RW:' + runeword.name)){
+                choicesSet.add({ value : 'RW:' + runeword.name , label: runeword.name + ' (Runeword)'});
+                checkSet.add('RW:' + runeword.name);
+            }
 
             for(var property of runeword.properties) {
 

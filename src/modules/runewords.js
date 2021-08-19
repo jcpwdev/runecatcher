@@ -164,14 +164,13 @@ class Runeword {
                 for (let property of propertyStack) {
                     if(typeof property === 'undefined' || property.value === false) continue;
 
-
                     let currentValue = parseInt((combinedProperty.positive ? '+' : '-') + combinedProperty.value.minValue);
                     let addedValue = parseInt((property.positive ? '+' : '-') + property.value.minValue);
 
                     let newValue = currentValue + addedValue;
                     combinedProperty.value.minValue = Math.abs(newValue);
 
-                    // if our master prop has 2 values (min and max) add the value on both of them
+                    // if our master prop has 2 values (min and max) add the other value on both of them
                     if(combinedProperty.value.constructor.name === 'PropertyValueVaries' || combinedProperty.value.constructor.name === 'PropertyValueRange') {
 
                         let currentMaxValue = parseInt((combinedProperty.positive ? '+' : '-') + combinedProperty.value.maxValue);

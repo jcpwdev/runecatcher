@@ -1141,10 +1141,10 @@ class FaithRuneword extends Runeword {
         this.properties = [
             new Property('Fanaticism Aura', new PropertyValueVaries(12,15)),
             new Property('Attack Rating' , new PropertyValue(300, '%')),
-            new Property('Enhanced Damage' , new PropertyValueVaries(130, 180, '%')),
+            new Property('Enhanced Damage' , new PropertyValueVaries(200, 250, '%')),
             new Property('Fire Damage' , new PropertyValue(120)),
             new Property('All Resistances' , new PropertyValue(15, '%')),
-            new Property('Reanimate as: Returned' , new PropertyValue(4, '%')),
+            new Property('Reanimate as: Returned' , new PropertyValueVaries(6,8, '%')),
         ]
 
     }

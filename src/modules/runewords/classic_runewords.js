@@ -1383,13 +1383,13 @@ class StoneRuneword extends Runeword {
         this.bases = Bases.allArmors();
 
         this.properties = [
-            new Property('Indestructible', false),
-            new Property('All Skills', new PropertyValue(1)),
             new Property('Faster Hit Recovery', new PropertyValue(40, '%')),
-            new Property('Enhanced Defense', new PropertyValueVaries(170,260, '%')),
-            new Property('Strength', new PropertyValueVaries(10,16)),
-            new Property('Vitality', new PropertyValueVaries(10,16)),
-            new PropertyCharges(new Skill('Clay Golem',16), new PropertyValue(36))
+            new Property('Enhanced Defense', new PropertyValueVaries(220,260, '%')),
+            new Property('Defense vs. Missiles', new PropertyValue(300)),
+            new Property('Strength', new PropertyValue(16)),
+            new Property('Vitality', new PropertyValue(16)),
+            new PropertyCharges(new Skill('Clay Golem',16), new PropertyValue(36)),
+            new PropertyCharges(new Skill('Molten Boulder',16), new PropertyValue(80))
         ]
 
     }

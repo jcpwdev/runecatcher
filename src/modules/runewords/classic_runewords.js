@@ -1255,11 +1255,12 @@ class EnigmaRuneword extends Runeword {
 
         this.properties = [
             new Property('All Skills', new PropertyValue(2)),
-            new PropertyCharges(new Skill('Blink (Recharges)', 1), new PropertyValue(5)),
-            new Property('Faster Run/Walk', new PropertyValue(25,'%')),
-            new Property('Enhanced Defense', new PropertyValueVaries(500, 775)),
-            new Property('Strength', new PropertyValueScales(new PropertyValueVaries(0.5,0.75))),
-            new Property('Better Chance of Getting Magic Items', new PropertyValueScales(new PropertyValueVaries(0.5,0.75), '%'))
+            new Property('Teleport', new PropertyValue(1)),
+            new Property('Faster Run/Walk', new PropertyValue(45,'%')),
+            new Property('Enhanced Defense', new PropertyValueVaries(750, 775)),
+            new Property("Life after Kill", new PropertyValue(14)),
+            new Property('Strength', new PropertyValueScales(new PropertyValue(0.75))),
+            new Property('Better Chance of Getting Magic Items', new PropertyValueScales(new PropertyValue(1), '%'))
         ]
 
     }

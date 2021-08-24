@@ -1,4 +1,4 @@
-import { PD2Runes as Runes } from '../runes/pd2_runes';
+import { ClassicRunes as Runes } from '../runes/classic_runes';
 import Bases from '../bases';
 
 import {
@@ -723,7 +723,7 @@ class FortitudeRuneword extends Runeword {
         this.bases = bases;
 
         this.properties = [
-            new PropertyCastChance(new Skill("Chilling Armor", 15), new PropertyValue(20, '%')),
+            new PropertyCastChance(new Skill("Chilling Armor", 15), new PropertyValue(20, '%'), 'struck'),
             new Property('Faster Cast Rate', new PropertyValue(25, '%')),
             new Property('Enhanced Damage', new PropertyValue(300, '%')),
             new Property('Enhanced Defense', new PropertyValue(200, '%')),

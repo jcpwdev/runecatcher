@@ -1499,8 +1499,7 @@ class RainRuneword extends Runeword {
         this.properties = [
             new PropertyCastChance( new Skill('Cyclone Armor', 15), new PropertyValue(5, '%'), 'struck'),
             new PropertyCastChance( new Skill('Twister', 15), new PropertyValue(5, '%'), 'strike'),
-            new Property('Druid Skills', new PropertyValueVaries(1,2)),
-            new Property('Summoning Skills', new PropertyValue(1), true, 'Druid'),
+            new Property('Druid Skills', new PropertyValue(2)),
             new Property('Mana', new PropertyValueVaries(100,150))
         ]
 

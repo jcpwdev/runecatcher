@@ -1459,11 +1459,10 @@ class PrincipleRuneword extends Runeword {
         this.bases = Bases.allArmors();
 
         this.properties = [
-            new PropertyCastChance( new Skill('Holy Bolt', 25), new PropertyValue(50, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Holy Bolt', 5), new PropertyValue(100, '%'), 'strike'),
             new Property('Paladin Skills', new PropertyValue(2)),
-            new Property('Life', new PropertyValueVaries(50,100)),
-            new Property('Damage to Undead', new PropertyValueVaries(50,80, '%')),
-            new Property('Damage to Demons', new PropertyValueVaries(50,80, '%'))
+            new Property('Life', new PropertyValueVaries(100,150)),
+            new Property('Damage to Undead', new PropertyValue(50, '%')) '%'))
         ]
 
     }

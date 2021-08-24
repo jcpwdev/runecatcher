@@ -1324,7 +1324,7 @@ class ChainsOfHonorRuneword extends Runeword {
             new Property('Life Stolen per Hit', new PropertyValue(8,'%')),
             new Property('Enhanced Defense', new PropertyValue(70, '%')),
             new Property('Strength', new PropertyValue(20)),
-            new Property('All Resistances', new PropertyValue(55, '%'))
+            new Property('All Resistances', new PropertyValue(50, '%'))
         ]
 
     }

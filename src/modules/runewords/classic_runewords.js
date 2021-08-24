@@ -1261,7 +1261,7 @@ class EnigmaRuneword extends Runeword {
             new Property('Enhanced Defense', new PropertyValueVaries(750, 775)),
             new Property("Life after Kill", new PropertyValue(14)),
             new Property('Strength', new PropertyValueScales(new PropertyValue(0.75))),
-            new Property('Better Chance of Getting Magic Items', new PropertyValueScales(new PropertyValue(1), '%'))
+            new Property('Better Chance of Getting Magic Items', new PropertyValueScales(new PropertyValue(1,'%')))
         ]
 
     }

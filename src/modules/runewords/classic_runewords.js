@@ -723,8 +723,9 @@ class FortitudeRuneword extends Runeword {
         this.bases = bases;
 
         this.properties = [
+            new PropertyCastChance(new Skill("Chilling Armor", 15), new PropertyValue(20, '%')),
             new Property('Faster Cast Rate', new PropertyValue(25, '%')),
-            new Property('Enhanced Damage', new PropertyValue(200, '%')),
+            new Property('Enhanced Damage', new PropertyValue(300, '%')),
             new Property('Enhanced Defense', new PropertyValue(200, '%')),
             new Property('Life', new PropertyValueScales(new PropertyValueVaries(1, 1.5))),
             new Property('All Resistances' , new PropertyValueVaries(25,30, '%')),

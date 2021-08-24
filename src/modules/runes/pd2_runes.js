@@ -1,76 +1,39 @@
 
-import {Property, PropertyValue, PropertyValueDuration, PropertyValueRange, PropertyValueVaries} from "./basics";
+import {Property, PropertyValue, PropertyValueDuration, PropertyValueRange, Rune, RuneFactory} from "../basics";
 
-function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
 
-class Rune {
+export class PD2Runes extends RuneFactory {
 
-    constructor() {
-        if (new.target === Rune) {
-            throw new TypeError("Cannot construct a Rune Class instances directly");
+    static el = class ElRune extends Rune {
+
+        constructor() {
+            super();
+
+            this.properties = {
+                weapon : [
+                    new Property('Lightradius' , new PropertyValue(1)),
+                    new Property('Attack Rating' , new PropertyValue(50))
+                ],
+                helmet : [
+                    new Property('Lightradius' , new PropertyValue(1)),
+                    new Property('Defense' , new PropertyValue(15))
+                ],
+                armor : [
+                    new Property('Lightradius' , new PropertyValue(1)),
+                    new Property('Defense' , new PropertyValue(15))
+                ],
+                shield : [
+                    new Property('Lightradius' , new PropertyValue(1)),
+                    new Property('Defense' , new PropertyValue(15))
+                ]
+            };
+
+            this.rank = 1;
         }
-        this.name = this.constructor.name.substr(0 , this.constructor.name.indexOf('Rune'));
 
     }
 
-    toString() {
-        return this.name;
-    }
-
-    level() {
-      return this.rank * 2 + 3;
-    }
-
-    render() {
-        let container = document.createElement('div');
-        container.classList.add('rune-box', this.name.toLowerCase());
-        container.innerHTML = capitalize(this.name);
-
-        return container;
-    }
-}
-
-let Runes = {
-    "get" : function(runename){
-        if(this.hasOwnProperty(runename.toLowerCase()) && runename !== 'get') {
-            return new this[runename.toLowerCase()];
-        } else {
-            return false;
-        }
-    },
-
-    "el" : class ElRune extends Rune {
-
-            constructor() {
-                super();
-
-                this.properties = {
-                    weapon : [
-                        new Property('Lightradius' , new PropertyValue(1)),
-                        new Property('Attack Rating' , new PropertyValue(50))
-                    ],
-                    helmet : [
-                        new Property('Lightradius' , new PropertyValue(1)),
-                        new Property('Defense' , new PropertyValue(15))
-                    ],
-                    armor : [
-                        new Property('Lightradius' , new PropertyValue(1)),
-                        new Property('Defense' , new PropertyValue(15))
-                    ],
-                    shield : [
-                        new Property('Lightradius' , new PropertyValue(1)),
-                        new Property('Defense' , new PropertyValue(15))
-                    ]
-                };
-
-                this.rank = 1;
-            }
-
-        },
-
-    "eld" : class EldRune extends Rune {
+    static eld = class EldRune extends Rune {
 
         constructor() {
             super();
@@ -88,9 +51,9 @@ let Runes = {
             this.rank = 2;
         }
 
-    },
+    }
 
-    "tir" : class TirRune extends Rune {
+    static tir = class TirRune extends Rune {
 
         constructor() {
             super();
@@ -105,9 +68,9 @@ let Runes = {
             this.rank = 3;
         }
     
-    },
+    }
 
-    "nef" : class NefRune extends Rune {
+    static nef = class NefRune extends Rune {
 
         constructor() {
             super();
@@ -122,9 +85,9 @@ let Runes = {
             this.rank = 4;
         }
     
-    },
+    }
 
-    "eth" : class EthRune extends Rune {
+    static eth = class EthRune extends Rune {
 
         constructor() {
             super();
@@ -139,9 +102,9 @@ let Runes = {
             this.rank = 5;
         }
     
-    },
+    }
 
-    "ith" : class IthRune extends Rune {
+    static ith = class IthRune extends Rune {
         
         constructor() {
             super();
@@ -155,9 +118,9 @@ let Runes = {
     
             this.rank = 6;
         }
-    },
+    }
 
-    "tal" : class TalRune extends Rune {
+    static tal = class TalRune extends Rune {
         
         constructor() {
             super();
@@ -171,9 +134,9 @@ let Runes = {
     
             this.rank = 7;
         }
-    },
+    }
 
-    "ral" : class RalRune extends Rune {
+    static ral = class RalRune extends Rune {
             
         constructor() {
             super();
@@ -187,9 +150,9 @@ let Runes = {
     
             this.rank = 8;
         }
-    },
+    }
 
-    "ort" : class OrtRune extends Rune {
+    static ort = class OrtRune extends Rune {
         
         constructor() {
             super();
@@ -203,9 +166,9 @@ let Runes = {
     
             this.rank = 9;
         }
-    },
+    }
 
-    "thul" : class ThulRune extends Rune {
+    static thul = class ThulRune extends Rune {
         
         constructor() {
             super();
@@ -219,9 +182,9 @@ let Runes = {
     
             this.rank = 10;
         }
-    },
+    }
 
-    "amn" : class AmnRune extends Rune {
+    static amn = class AmnRune extends Rune {
         
         constructor() {
             super();
@@ -235,9 +198,9 @@ let Runes = {
     
             this.rank = 11;
         }
-    },
-    
-    "sol" : class SolRune extends Rune {
+    }
+
+    static sol = class SolRune extends Rune {
         
         constructor() {
             super();
@@ -251,9 +214,9 @@ let Runes = {
     
             this.rank = 12;
         }
-    },
+    }
 
-    "shael" : class ShaelRune extends Rune {
+    static shael = class ShaelRune extends Rune {
 
         constructor() {
             super();
@@ -267,10 +230,10 @@ let Runes = {
 
             this.rank = 13;
         }
-    },
+    }
 
 
-    "dol" : class DolRune extends Rune {
+    static dol = class DolRune extends Rune {
 
         constructor() {
             super();
@@ -284,9 +247,9 @@ let Runes = {
 
             this.rank = 14;
         }
-    },
+    }
 
-    "hel" : class HelRune extends Rune {
+    static hel = class HelRune extends Rune {
 
         constructor() {
             super();
@@ -304,9 +267,9 @@ let Runes = {
         level() {
             return 0;
         }
-    },
+    }
 
-    "io" : class IoRune extends Rune {
+    static io = class IoRune extends Rune {
 
         constructor() {
             super();
@@ -320,9 +283,9 @@ let Runes = {
 
             this.rank = 16;
         }
-    },
+    }
 
-    "lum" : class LumRune extends Rune {
+    static lum = class LumRune extends Rune {
 
         constructor() {
             super();
@@ -336,9 +299,9 @@ let Runes = {
 
             this.rank = 17;
         }
-    },
+    }
 
-    "ko" : class KoRune extends Rune {
+    static ko = class KoRune extends Rune {
 
         constructor() {
             super();
@@ -352,9 +315,9 @@ let Runes = {
 
             this.rank = 18;
         }
-    },
+    }
 
-    "fal" : class FalRune extends Rune {
+    static fal = class FalRune extends Rune {
 
         constructor() {
             super();
@@ -368,9 +331,9 @@ let Runes = {
 
             this.rank = 19;
         }
-    },
+    }
 
-    "lem" : class LemRune extends Rune {
+    static lem = class LemRune extends Rune {
 
         constructor() {
             super();
@@ -384,9 +347,9 @@ let Runes = {
 
             this.rank = 20;
         }
-    },
+    }
 
-    "pul" : class PulRune extends Rune {
+    static pul = class PulRune extends Rune {
 
         constructor() {
             super();
@@ -403,9 +366,9 @@ let Runes = {
 
             this.rank = 21;
         }
-    },
+    }
 
-    "um" : class UmRune extends Rune {
+    static um = class UmRune extends Rune {
 
         constructor() {
             super();
@@ -419,9 +382,9 @@ let Runes = {
 
             this.rank = 22;
         }
-    },
+    }
 
-    "mal" : class MalRune extends Rune {
+    static mal = class MalRune extends Rune {
 
         constructor() {
             super();
@@ -435,10 +398,10 @@ let Runes = {
 
             this.rank = 23;
         }
-    },
+    }
 
 
-    "ist" : class IstRune extends Rune {
+    static ist = class IstRune extends Rune {
 
         constructor() {
             super();
@@ -452,9 +415,9 @@ let Runes = {
 
             this.rank = 24;
         }
-    },
+    }
 
-    "gul" : class GulRune extends Rune {
+    static gul = class GulRune extends Rune {
 
         constructor() {
             super();
@@ -468,9 +431,9 @@ let Runes = {
 
             this.rank = 25;
         }
-    },
+    }
 
-    "vex" : class VexRune extends Rune {
+    static vex = class VexRune extends Rune {
 
         constructor() {
             super();
@@ -484,9 +447,9 @@ let Runes = {
 
             this.rank = 26;
         }
-    },
+    }
 
-    "ohm" : class OhmRune extends Rune {
+    static ohm = class OhmRune extends Rune {
 
         constructor() {
             super();
@@ -500,9 +463,9 @@ let Runes = {
 
             this.rank = 27;
         }
-    },
+    }
 
-    "lo" : class LoRune extends Rune {
+    static lo = class LoRune extends Rune {
 
         constructor() {
             super();
@@ -516,9 +479,9 @@ let Runes = {
 
             this.rank = 28;
         }
-    },
+    }
 
-    "sur" : class SurRune extends Rune {
+    static sur = class SurRune extends Rune {
 
         constructor() {
             super();
@@ -532,9 +495,9 @@ let Runes = {
 
             this.rank = 29;
         }
-    },
+    }
 
-    "ber" : class BerRune extends Rune {
+    static ber = class BerRune extends Rune {
 
         constructor() {
             super();
@@ -548,9 +511,9 @@ let Runes = {
 
             this.rank = 30;
         }
-    },
+    }
 
-    "jah" : class JahRune extends Rune {
+    static jah = class JahRune extends Rune {
 
         constructor() {
             super();
@@ -564,9 +527,9 @@ let Runes = {
 
             this.rank = 31;
         }
-    },
+    }
 
-    "cham" : class ChamRune extends Rune {
+    static cham = class ChamRune extends Rune {
 
         constructor() {
             super();
@@ -580,9 +543,9 @@ let Runes = {
 
             this.rank = 32;
         }
-    },
+    }
 
-    "zod" : class ZodRune extends Rune {
+    static zod = class ZodRune extends Rune {
 
         constructor() {
             super();
@@ -598,6 +561,3 @@ let Runes = {
         }
     }
 }
-
-
-export default Runes;

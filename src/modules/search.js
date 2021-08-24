@@ -1,12 +1,12 @@
 import choices from "choices.js";
-import Runes from "./runes";
-import Runewords from "./runewords";
 import Bases from "./bases";
 import {makeSlugReadable} from "./basics";
 
 class Search {
 
-    constructor() {
+    constructor(runes,runewords) {
+        this.RUNES = runes;
+        this.RUNEWORDS = runewords;
         this.currentlyInViewport = [];
 
         this.viewportObserver = new IntersectionObserver((entries, observer) => {
@@ -60,11 +60,11 @@ class Search {
         var choicesSet = new Set();
         var checkSet = new Set();
 
-        for(var runeName in Runes){
+        for(var runeName in this.RUNES){
 
             if(runeName === 'get') continue;
 
-            var rune = Runes.get(runeName);
+            var rune = this.RUNES.get(runeName);
 
             for(var slot in rune.properties) {
 
@@ -86,7 +86,7 @@ class Search {
             }
         }
 
-        for(var runeword of Runewords){
+        for(var runeword of this.RUNEWORDS){
 
             if(!checkSet.has('RW:' + runeword.name)){
                 choicesSet.add({ value : 'RW:' + runeword.name , label: runeword.name + ' (Runeword)'});
@@ -148,7 +148,7 @@ class Search {
 
         var hits = [];
 
-        for (let runeword of Runewords) {
+        for (let runeword of this.RUNEWORDS) {
             let passedChecks = 0;
             let checks = 0;
 
@@ -187,7 +187,7 @@ class Search {
                 let runesFound = 0;
                 for (let runename of parameters.availableRunes) {
 
-                    let rune = Runes.get(runename);
+                    let rune = this.RUNES.get(runename);
 
                     var runeIsInRuneword = runeword.runes.some(function (runewordRune) {
                         return runewordRune.name === rune.name;
@@ -400,7 +400,7 @@ class Search {
                 }
             });
 
-            for(let rune in Runes) {
+            for(let rune in this.RUNES) {
                 if(rune === 'get') continue;
 
                 let runeCheckcontainer = document.createElement('div');
@@ -435,7 +435,7 @@ class Search {
 
                 let runeOption  = document.createElement('option');
                 runeOption.innerHTML = rune;
-                runeOption.value = Runes.get(rune).rank;
+                runeOption.value = this.RUNES.get(rune).rank;
 
                 let runeOptionB = runeOption.cloneNode(true);
 
@@ -444,7 +444,7 @@ class Search {
                 this.runesFromSelect.appendChild(runeOption);
             }
 
-            this.runesToSelect.value = Runes.get('zod').rank;
+            this.runesToSelect.value = this.RUNES.get('zod').rank;
 
             [this.runesFromSelect, this.runesToSelect].forEach((select) =>{
 
@@ -455,7 +455,7 @@ class Search {
 
                     document.querySelectorAll('[name="availableRunes"]').forEach((checkbox) =>{
 
-                        let rune = Runes.get(checkbox.value);
+                        let rune = this.RUNES.get(checkbox.value);
 
                         if(rune.rank >= low && rune.rank <= high){
                             checkbox.checked = true;

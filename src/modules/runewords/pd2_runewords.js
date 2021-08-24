@@ -1,5 +1,5 @@
-import Runes from './runes';
-import Bases from './bases';
+import { PD2Runes as Runes } from '../runes/pd2_runes';
+import Bases from '../bases';
 
 import {
     Property,
@@ -7,240 +7,8 @@ import {
     PropertyValueDuration,
     PropertyValueRange,
     PropertyValueVaries,
-    PropertyValueScales,
-    makeSlugReadable, PropertyCastChance, Skill, PropertyCharges
-} from "./basics";
-
-class Runeword {
-
-    constructor() {
-        if (new.target === Runeword) {
-            throw new TypeError("Cannot construct a Runeword Class instance directly");
-        }
-        this.name = this.name();
-    }
-
-    name() {
-        let unspacedName = this.constructor.name.substr(0 , this.constructor.name.indexOf('Runeword'));
-
-        return makeSlugReadable(unspacedName);
-    }
-
-    sockets() {
-        return this.runes.length;
-    }
-
-    slot() {
-        let firstBase;
-
-        if(this.bases instanceof Array) {
-            firstBase = this.bases[0];
-        } else {
-            firstBase = this.bases;
-        }
-
-        if(typeof firstBase.slot === 'string') return firstBase.slot;
-
-        throw new Error("Slot cant be determined");
-    }
-
-    level() {
-        let reqLevel = 1;
-
-        this.runes.forEach(function(rune){
-
-            if(reqLevel < rune.level()) {
-                reqLevel = rune.level();
-            }
-
-        });
-        return reqLevel;
-    }
-
-    getProperties() {
-
-        let runeProperties = [];
-        let count = 0;
-
-        for(var rune of this.runes) {
-            count++;
-
-            if(rune.properties[this.slot()] instanceof Array) {
-                let modifiedRuneProperties = rune.properties[this.slot()].map(
-                    function(property){
-                        property.inheritedFromRune = rune.name;
-                        return property;
-                    }
-                );
-                runeProperties = runeProperties.concat(modifiedRuneProperties);
-            } else {
-                let modifiedRuneProperty = rune.properties[this.slot()];
-                modifiedRuneProperty.inheritedFromRune = rune.name;
-                runeProperties.push(modifiedRuneProperty);
-            }
-
-        }
-
-        return [...this.properties, ... runeProperties];
-
-    }
-
-    getComputedProperties() {
-
-        let sortedProperties = {};
-        let computedProperties = [];
-
-        // sort properties by name and unit into a two-dimensional array
-        // array keys are then :
-        // "Enhanced Damage%"
-        // "Cold Resist%"
-        // "Enhanced Damage__nounit"
-        for ( let property of this.getProperties()) {
-
-            let suffix = (property.value ? (property.value.unit ? property.value.unit : '__nounit') : '__novalue');
-
-            let name = property.name.toLowerCase();
-
-            property.inheritedFromRune = null;
-
-            if(typeof sortedProperties[name + suffix] === 'undefined') {
-
-                sortedProperties[name + suffix] = [];
-            }
-
-            sortedProperties[name + suffix].push(property);
-
-        }
-
-
-        // try to calculate everything together that is in one stack
-        for ( let propertyStackName in sortedProperties) {
-
-            let propertyStack = sortedProperties[propertyStackName];
-
-            // only contains 1? -> pass through
-            if(propertyStack.length === 1) {
-
-                computedProperties.push(propertyStack[0]);
-
-            } else if(propertyStack.length > 1) {
-
-                // some sorting
-                propertyStack.sort((propA, propB)=>{
-
-                    let propertyWorth = {
-                        'PropertyValue' : 0,
-                        'PropertyValueDuration' : 1,
-                        'PropertyValueRange' : 2,
-                        'PropertyValueVaries' : 3
-                    }
-
-                    return propertyWorth[propA.constructor.name] - propertyWorth[propB.constructor.name]
-
-                });
-
-                // pull the first property from the stack out - we will use it as master property, which gets changed by all other properties in the stack
-                let combinedPropertyValue;
-                if(propertyStack[0].value !== false) {
-
-                    let constructor = propertyStack[0].value.constructor;
-
-                    if (constructor.name === 'PropertyValueVaries' || constructor.name === 'PropertyValueRange') {
-                        combinedPropertyValue = new constructor(propertyStack[0].value.minValue, propertyStack[0].value.maxValue, propertyStack[0].value.unit);
-                    } else { // assuming plain "PropertyValue"
-                        combinedPropertyValue = new constructor(propertyStack[0].value.minValue, propertyStack[0].value.unit);
-                    }
-
-                } else {
-                    combinedPropertyValue = false;
-                }
-
-                // our new master property for this stack
-                let combinedProperty = new Property(propertyStack[0].name, combinedPropertyValue , propertyStack[0].positive, propertyStack[0].classSpecific);
-
-                delete propertyStack[0]; // delete the old base of our master property
-
-                // go through the remaining properties and try to add them on the master property
-                for (let property of propertyStack) {
-                    if(typeof property === 'undefined' || property.value === false) continue;
-
-                    let currentValue = parseInt((combinedProperty.positive ? '+' : '-') + combinedProperty.value.minValue);
-                    let addedValue = parseInt((property.positive ? '+' : '-') + property.value.minValue);
-
-                    let newValue = currentValue + addedValue;
-                    combinedProperty.value.minValue = Math.abs(newValue);
-
-                    // if our master prop has 2 values (min and max) add the other value on both of them
-                    if(combinedProperty.value.constructor.name === 'PropertyValueVaries' || combinedProperty.value.constructor.name === 'PropertyValueRange') {
-
-                        let currentMaxValue = parseInt((combinedProperty.positive ? '+' : '-') + combinedProperty.value.maxValue);
-                        if(property.value.constructor.name === 'PropertyValueVaries' || property.value.constructor.name === 'PropertyValueRange') {
-                            addedValue = parseInt((property.positive ? '+' : '-') + property.value.maxValue);
-
-                        }
-                        combinedProperty.value.maxValue = Math.abs(currentMaxValue + addedValue);
-
-                    }
-                    combinedProperty.positive = newValue >= 0;
-                }
-
-                // we have combined a full stack of identical properties into one - push it!
-                computedProperties.push(combinedProperty);
-            }
-        }
-
-        return computedProperties;
-    }
-
-    render(count = false, listingStyle) {
-
-        let container = document.createElement('div');
-        container.classList.add('runeword-box');
-        if(count)container.setAttribute('data-count',count);
-
-        let title = document.createElement('h2');
-        title.classList.add('runeword-title');
-        title.innerText = this.name;
-
-        let runelist = document.createElement('ul');
-        runelist.classList.add('runeword-runes');
-
-        for(let rune of this.runes) {
-            let runeLi = document.createElement('li');
-            runeLi.appendChild(rune.render());
-            runelist.appendChild(runeLi);
-        }
-
-
-        let properties = document.createElement('ul');
-        properties.classList.add('runeword-properties');
-
-        let props = 'computed' === listingStyle ? this.getComputedProperties() : this.getProperties();
-
-        for(let propertyLi of props) {
-            properties.appendChild(propertyLi.render('li'));
-        }
-
-        let baselist = document.createElement('p');
-        baselist.classList.add('runeword-bases');
-
-        baselist.innerHTML = this.sockets() + 'x socketed ' + this.bases.map(function(base){ return base.name}).join(', ');
-
-
-        let requirements = document.createElement('p');
-        requirements.classList.add('runeword-requirements');
-        requirements.innerHTML = 'requires Level ' + this.level();
-
-        container.appendChild(title);
-        container.appendChild(runelist);
-        container.appendChild(baselist);
-        container.appendChild(properties);
-        container.appendChild(requirements);
-
-
-        return container;
-    }
-}
+    PropertyValueScales, PropertyCastChance, Skill, PropertyCharges, Runeword
+} from "../basics";
 
 class SpiritRuneword extends Runeword {
 
@@ -1975,7 +1743,7 @@ class LastWishRuneword extends Runeword {
 
 
 
-var Runewords = [
+var PD2Runewords = [
     new SteelRuneword,
     new SpiritRuneword(Bases.allShields()),
     new SpiritRuneword([Bases.swords]),
@@ -2068,4 +1836,4 @@ var Runewords = [
 
 ];
 
-export default Runewords;
+export default PD2Runewords;

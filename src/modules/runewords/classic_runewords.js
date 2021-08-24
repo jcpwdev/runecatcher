@@ -1202,7 +1202,7 @@ class SmokeRuneword extends Runeword {
             new PropertyCharges(new Skill('Weaken', 6), new PropertyValue(18)),
             new Property('Light Radius', new PropertyValue(1), false),
             new Property('Defense vs. Missiles', new PropertyValue(250)),
-            new Property('All Resistances', new PropertyValueVaries(30,50, '%')),
+            new Property('All Resistances', new PropertyValue(50, '%')),
         ]
 
     }

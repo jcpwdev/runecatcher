@@ -1341,10 +1341,10 @@ class BrambleRuneword extends Runeword {
         this.properties = [
             new Property('Thorns Aura', new PropertyValueVaries(15,21)),
             new Property('Faster Hit Recovery', new PropertyValue(50,'%')),
-            new Property('Poison Skill Damage', new PropertyValueVaries(30,50,'%')),
+            new Property('Poison Skill Damage', new PropertyValueVaries(25,50,'%')),
             new Property('Defense', new PropertyValue(300)),
             new Property('Poison Resistance', new PropertyValue(100, '%')),
-            new Property('Life After Kill', new PropertyValueVaries(5,10)),
+            new Property('Life After Kill', new PropertyValue(13)),
             new PropertyCharges(new Skill('Spirit of Barbs', 13), new PropertyValue(33))
         ]
 

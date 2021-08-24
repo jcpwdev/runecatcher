@@ -1275,13 +1275,13 @@ class GloomRuneword extends Runeword {
         this.bases = Bases.allArmors();
 
         this.properties = [
-            new PropertyCastChance( new Skill('Dim Vision', 9), new PropertyValue(15, '%'), 'struck'),
-            new Property('Faster Hit Recovery', new PropertyValueVaries(20,40,'%')),
+            new PropertyCastChance( new Skill('Dim Vision', 3), new PropertyValue(15, '%'), 'struck'),
+            new Property('Faster Hit Recovery', new PropertyValue(10,'%')),
             new Property('Enhanced Defense', new PropertyValueVaries(170, 230, '%')),
             new Property('Damage to Mana', new PropertyValue(5, '%')),
             new Property('All Resistances', new PropertyValue(30, '%')),
             new Property('Half Freeze Duration', false),
-            new Property('Magic Damage Reduced', new PropertyValueVaries(4,10))
+            new Property('Light Radius', new PropertyValue(3), false)
         ]
 
     }

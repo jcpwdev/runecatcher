@@ -1362,7 +1362,7 @@ class DragonRuneword extends Runeword {
         this.bases = bases;
 
         this.properties = [
-            new PropertyCastChance( new Skill('Venom', 18), new PropertyValue(20, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Venom', 18), new PropertyValue(20, '%'), 'struck'),
             new PropertyCastChance( new Skill('Hydra', 15), new PropertyValue(12, '%'), 'strike'),
             new Property('Holy Fire Aura', new PropertyValue(14)),
             new Property('Defense', new PropertyValue(360)),

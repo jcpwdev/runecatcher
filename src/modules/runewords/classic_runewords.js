@@ -81,9 +81,9 @@ class StealthRuneword extends Runeword {
             new Property('Magic Damage Reduced' , new PropertyValue(3)),
             new Property('Dexterity' , new PropertyValue(6)),
             new Property('Maximum Stamina' , new PropertyValue(15)),
-            new Property('Faster Run/Walk' , new PropertyValue(10, '%')),
-            new Property('Faster Cast Rate' , new PropertyValue(20, '%')),
-            new Property('Faster Hit Recovery' , new PropertyValue(20, '%')),
+            new Property('Faster Run/Walk' , new PropertyValue(25, '%')),
+            new Property('Faster Cast Rate' , new PropertyValue(25, '%')),
+            new Property('Faster Hit Recovery' , new PropertyValue(25, '%')),
         ];
 
     }

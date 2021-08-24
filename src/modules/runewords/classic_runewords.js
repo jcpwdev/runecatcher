@@ -1442,10 +1442,9 @@ class MythRuneword extends Runeword {
         this.properties = [
             new PropertyCastChance( new Skill('Howl', 1), new PropertyValue(3, '%'), 'struck'),
             new PropertyCastChance( new Skill('Taunt', 1), new PropertyValue(10, '%'), 'strike'),
-            new Property('Barbarian Skills', new PropertyValueVaries(1,2)),
-            new Property('Mana After Kill', new PropertyValueVaries(1,3)),
-            new Property('Replenish Life', new PropertyValue(10)),
-            new Property('Attacker Takes Damage', new PropertyValueScales(new PropertyValueVaries(2,3)))
+            new Property('Barbarian Skills', new PropertyValue(2)),
+            new Property('Replenish Life', new PropertyValue(10))
+
         ]
 
     }

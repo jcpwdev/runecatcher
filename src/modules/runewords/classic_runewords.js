@@ -1234,7 +1234,7 @@ class DuressRuneword extends Runeword {
 
         this.properties = [
             new Property('Faster Hit Recovery', new PropertyValue(20,'%')),
-            new Property('Enhanced Damage', new PropertyValueVaries(40, 80,'%')),
+            new Property('Enhanced Damage', new PropertyValueVaries(10, 20,'%')),
             new Property('Enhanced Defense', new PropertyValueVaries(150, 200,'%')),
             new Property('Cold Damage', new PropertyValueRange(37, 133)),
             new Property('Slower Stamina Drain', new PropertyValue(20, '%'), false),

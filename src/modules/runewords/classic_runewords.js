@@ -1218,8 +1218,7 @@ class WealthRuneword extends Runeword {
 
         this.properties = [
             new Property('Better Chance of Getting Magic Items', new PropertyValue(100,'%')),
-            new Property('Extra Gold From Monsters', new PropertyValue(250,'%')),
-            new Property("Mana after Kill" , new PropertyValue(2))
+            new Property('Extra Gold From Monsters', new PropertyValue(250,'%'))
         ]
 
     }

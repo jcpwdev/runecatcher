@@ -1424,7 +1424,7 @@ class EnlightenmentRuneword extends Runeword {
         this.properties = [
             new PropertyCastChance( new Skill('Blaze', 15), new PropertyValue(5, '%'), 'struck'),
             new PropertyCastChance( new Skill('Fire Ball', 15), new PropertyValue(5, '%'), 'strike'),
-            new Property('Sorceress Skills', new PropertyValueVaries(1,2)),
+            new Property('Sorceress Skills', new PropertyValue(2)),
             new Property('Faster Cast Rate', new PropertyValue(20, '%')),
             new Property('Warmth', new PropertyValue(1))
         ]

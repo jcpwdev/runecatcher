@@ -1462,7 +1462,7 @@ class PrincipleRuneword extends Runeword {
             new PropertyCastChance( new Skill('Holy Bolt', 5), new PropertyValue(100, '%'), 'strike'),
             new Property('Paladin Skills', new PropertyValue(2)),
             new Property('Life', new PropertyValueVaries(100,150)),
-            new Property('Damage to Undead', new PropertyValue(50, '%')) '%'))
+            new Property('Damage to Undead', new PropertyValue(50, '%'))
         ]
 
     }

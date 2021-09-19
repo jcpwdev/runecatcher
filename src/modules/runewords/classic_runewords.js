@@ -1680,11 +1680,12 @@ class RadianceRuneword extends Runeword {
 
         this.properties = [
             new Property('Enhanced Defense', new PropertyValue(75, '%')),
-            new Property('Enhanced Damage', new PropertyValueVaries(20,40, '%')),
+
             new Property('Energy', new PropertyValue(10)),
             new Property('Mana', new PropertyValue(33)),
             new Property('Vitality', new PropertyValue(10)),
-            new Property('Light Radius', new PropertyValue(5))
+            new Property('Light Radius', new PropertyValue(5)),
+            new Property('Magic Damage Reduced' , new PropertyValue(3)),
         ]
 
     }

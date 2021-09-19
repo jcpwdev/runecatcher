@@ -449,7 +449,7 @@ class ZephyrRuneword extends Runeword {
         this.bases = [Bases.missileweapons];
 
         this.properties = [
-            new Property('Enhanced Damage', new PropertyValueVaries(33,66,'%')),
+            new Property('Enhanced Damage', new PropertyValue(33,'%')),
             new Property('Increased Attack Speed', new PropertyValue(25,'%')),
             new Property('Faster Run/Walk', new PropertyValue(25,'%')),
             new Property('Attack Rating', new PropertyValue(66)),
@@ -1668,8 +1668,6 @@ var ClassicRunewords = [
     new StealthRuneword,
     new PledgeOfTheAncientsRuneword,
     new SilenceRuneword,
-    new PatternRuneword,
-    new PlagueRuneword,
     new BlackRuneword,
     new FuryRuneword,
     new HolyThunderRuneword,

@@ -1556,11 +1556,11 @@ class DreamRuneword extends Runeword {
 
         this.properties = [
             new PropertyCastChance( new Skill('Confuse', 15), new PropertyValue(10, '%'), 'struck'),
-            new Property('Holy Shock Aura', new PropertyValue(13)),
+            new Property('Holy Shock Aura', new PropertyValue(15)),
             new Property('Faster Hit Recovery', new PropertyValueVaries(20,30, '%')),
             new Property('Enhanced Defense', new PropertyValueVaries(150,220)),
-            new Property('All Resistances', new PropertyValueVaries(10,20, '%')),
-            new Property('Better Chance of Getting Magic Items', new PropertyValueVaries(15,30, '%')),
+            new Property('All Resistances', new PropertyValueVaries(5,20, '%')),
+            new Property('Better Chance of Getting Magic Items', new PropertyValueVaries(12,25, '%')),
             new Property('Mana', new PropertyValueScales(0.625)),
         ]
 

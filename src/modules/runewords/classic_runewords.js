@@ -1662,7 +1662,6 @@ class NadirRuneword extends Runeword {
             new Property('Enhanced Defense', new PropertyValue(50, '%')),
             new Property('Enhanced Defense', new PropertyValue(10)),
             new PropertyCharges(new Skill('Cloak of Shadows' , 13), new PropertyValue(9)),
-            new Property('Mana After Kill', new PropertyValueVaries(1,3)),
             new Property('Strength', new PropertyValue(5)),
             new Property('Light Radius', new PropertyValue(3), false),
             new Property('Extra Gold From Monsters', new PropertyValue(33, '%'), false)

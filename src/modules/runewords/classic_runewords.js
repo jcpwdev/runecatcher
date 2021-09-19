@@ -1703,6 +1703,7 @@ class DeliriumRuneword extends Runeword {
 
         this.properties = [
             new Property('All Skills', new PropertyValue(2)),
+            new PropertyCastChance( new Skill('Delirium', 50), new PropertyValue(1, '%'), 'struck'),
             new PropertyCastChance( new Skill('Confuse', 18), new PropertyValue(11, '%'), 'strike'),
             new PropertyCastChance( new Skill('Mind Blast', 14), new PropertyValue(6, '%'), 'struck'),
             new PropertyCastChance( new Skill('Terror', 13), new PropertyValue(14, '%'), 'struck'),

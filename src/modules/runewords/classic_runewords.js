@@ -1586,9 +1586,9 @@ class SanctuaryRuneword extends Runeword {
             new Property('Faster Block Rate', new PropertyValue(20, '%')),
             new Property('Chance to Block', new PropertyValue(20, '%')),
             new Property('Enhanced Defense', new PropertyValueVaries(130,160, '%')),
-            new Property('All Resistances', new PropertyValueVaries(35,50, '%')),
-            new Property('Cannot be Frozen', false),
-            new PropertyCharges(new Skill('Slow Movement' , 12), new PropertyValue(60))
+            new Property('All Resistances', new PropertyValueVaries(50,70, '%')),
+            new Property('Defense vs. Missiles', new PropertyValue(250)),
+            new PropertyCharges(new Skill('Slow Missiles' , 12), new PropertyValue(60))
         ]
 
     }

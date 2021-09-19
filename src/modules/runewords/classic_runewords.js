@@ -673,6 +673,7 @@ class HarmonyRuneword extends Runeword {
             new Property('Cold Damage', new PropertyValueRange(55,160)),
             new Property('Lightning Damage', new PropertyValueRange(55,160)),
             new Property('Light Radius' , new PropertyValue(2)),
+            new Property('Valkyire' , new PropertyValueVaries(2,6)),
             new Property('Regenerate Mana' , new PropertyValue(20,'%')),
             new PropertyCharges(new Skill('Revive', 20), new PropertyValue(25))
         ]

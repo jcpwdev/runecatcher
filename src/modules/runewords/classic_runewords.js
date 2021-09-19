@@ -1079,8 +1079,8 @@ class WrathRuneword extends Runeword {
         this.bases = [Bases.missileweapons];
 
         this.properties = [
-            new PropertyCastChance( new Skill('Amplify Damage', 18), new PropertyValue(60, '%'), 'strike'),
-            new Property('Increased Attack Speed' , new PropertyValueVaries(30, 45, '%')),
+            new PropertyCastChance( new Skill('Decrepify', 1), new PropertyValue(30, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Decrepify', 10), new PropertyValue(5, '%'), 'strike'),
             new Property('Damage to Demons' , new PropertyValue(300, '%')),
             new Property('Damage to Undead' , new PropertyValueVaries(250, 300, '%')),
             new Property('Magic Damage' , new PropertyValueRange(85, 120)),

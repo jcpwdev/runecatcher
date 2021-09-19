@@ -323,8 +323,8 @@ class MelodyRuneword extends Runeword {
 
         this.properties = [
             new Property('Bow and Crossbow Skills', new PropertyValue(3), true, 'Amazon'),
-            new Property('Enhanced Damage', new PropertyValueVaries(100, 150, '%')),
-            new Property('Slow Movement', new PropertyValue(3), true, 'Amazon'),
+            new Property('Enhanced Damage', new PropertyValue( 50, '%')),
+            new Property('Slow Missiles', new PropertyValue(3), true, 'Amazon'),
             new Property('Dodge', new PropertyValue(3), true, 'Amazon'),
             new Property('Critical Strike', new PropertyValue(3), true, 'Amazon'),
             new Property('Damage to Undead', new PropertyValue(300, '%' )),

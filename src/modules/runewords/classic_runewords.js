@@ -1642,8 +1642,8 @@ class LoreRuneword extends Runeword {
 
         this.properties = [
             new Property('All Skills', new PropertyValue(1)),
-            new Property('Energy', new PropertyValueVaries(5,10)),
-            new Property('Mana After Kill', new PropertyValue(1)),
+            new Property('Energy', new PropertyValue(10)),
+            new Property('Mana After Kill', new PropertyValue(2)),
             new Property('Light Radius', new PropertyValue(2))
         ]
 

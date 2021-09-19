@@ -39,7 +39,7 @@ class SteelRuneword extends Runeword {
 
         this.runes = [Runes.get('tir'), Runes.get('el')];
 
-        this.bases = [Bases.swords, Bases.axes, Bases.maces , Bases.claws];
+        this.bases = [Bases.swords, Bases.axes, Bases.maces];
 
         this.properties = [
             new Property('Increased Attack Speed', new PropertyValue(25, '%')),
@@ -117,50 +117,6 @@ class SilenceRuneword extends Runeword {
 
 }
 
-class PatternRuneword extends Runeword {
-    constructor() {
-        super();
-
-        this.runes = [Runes.get('tal'),Runes.get('ort'),Runes.get('tir')];
-
-        this.bases = [Bases.claws];
-
-        this.properties = [
-            new Property('Attack Rating', new PropertyValue(10, '%')),
-            new Property('Enhanced Damage', new PropertyValueVaries(80,120, '%')),
-            new Property('Fire Damage', new PropertyValueRange(17,62)),
-            new Property('All Resistances', new PropertyValue(15,'%')),
-            new Property('Strength', new PropertyValue(6)),
-            new Property('Dexterity', new PropertyValue(6)),
-            new Property('Faster Block Rate', new PropertyValue(30, '%'))
-        ]
-
-    }
-
-}
-
-class PlagueRuneword extends Runeword {
-    constructor() {
-        super();
-
-        this.runes = [Runes.get('cham'),Runes.get('fal'),Runes.get('um')];
-
-        this.bases = Bases.allWeapons();
-
-        this.properties = [
-            new PropertyCastChance( new Skill('Poison Nova', 15), new PropertyValue(25, '%'), 'attack'),
-            new PropertyCastChance( new Skill('Lower Resist', 12), new PropertyValue(20, '%'), 'struck'),
-            new Property('Cleansing Aura', new PropertyValueVaries(13,17)),
-            new Property('All Skills', new PropertyValueVaries(1,2)),
-            new Property('Damage to Demons', new PropertyValueVaries(260,380, '%')),
-            new Property('Enemy Poison Resistance', new PropertyValue(23, '%'),false),
-            new Property('Fire Damage', new PropertyValueRange(5,30 )),
-            new Property('Deadly Strike', new PropertyValueScales(0.3,'%'))
-        ]
-
-    }
-
-}
 
 class BlackRuneword extends Runeword {
     constructor() {
@@ -168,7 +124,7 @@ class BlackRuneword extends Runeword {
 
         this.runes = [Runes.get('thul'),Runes.get('io'),Runes.get('nef')];
 
-        this.bases = [Bases.maces, Bases.hammers, Bases.claws];
+        this.bases = [Bases.maces, Bases.hammers];
 
         this.properties = [
             new Property('Enhanced Damage', new PropertyValue(120, '%')),
@@ -254,7 +210,7 @@ class KingsGraceRuneword extends Runeword {
 
         this.runes = [Runes.get('amn'),Runes.get('ral'),Runes.get('thul')];
 
-        this.bases = [Bases.swords, Bases.scepters, Bases.claws];
+        this.bases = [Bases.swords, Bases.scepters];
 
         this.properties = [
             new Property('Enhanced Damage', new PropertyValue(100, '%')),
@@ -269,7 +225,7 @@ class KingsGraceRuneword extends Runeword {
 
 }
 
-class LeafRuneword extends Runeword { //todo: varies in pd2?
+class LeafRuneword extends Runeword {
     constructor() {
         super();
 
@@ -296,7 +252,7 @@ class InsightRuneword extends Runeword {
 
         this.runes = [Runes.get('ral'),Runes.get('tir'), Runes.get('tal') , Runes.get('sol')];
 
-        this.bases = [Bases.staves, Bases.polearms, Bases.spears , Bases.scepters];
+        this.bases = [Bases.staves, Bases.polearms];
 
         this.properties = [
             new Property('Meditation Aura', new PropertyValueVaries(12, 17)),
@@ -326,7 +282,7 @@ class MaliceRuneword extends Runeword {
             new Property('Chance of Open Wounds', new PropertyValue(100, '%')),
             new Property('Monster Defense per Hit', new PropertyValue(100, ), false),
             new Property('Prevent Monster Heal', false),
-            new Property('Drain Life', new PropertyValue(5) , false), //todo: or negative "replenish"?
+            new Property('Drain Life', new PropertyValue(5) , false),
             new Property('Life Gained After Each Hit', new PropertyValue(2))
 
         ]
@@ -420,12 +376,13 @@ class HandOfJusticeRuneword extends Runeword {
 }
 
 class InfinityRuneword extends Runeword {
-    constructor(style = "default") {
+
+    constructor() {
         super();
 
         this.runes = [Runes.get('ber'),Runes.get('mal'),Runes.get('ber'),Runes.get('ist')];
 
-        this.bases = [Bases.polearms, Bases.spears];
+        this.bases = [Bases.polearms];
 
         this.properties = [
             new PropertyCastChance( new Skill('Lightning', 20), new PropertyValue(50, '%'), 'kill'),
@@ -436,13 +393,6 @@ class InfinityRuneword extends Runeword {
             new Property('Enemy Lightning Resistance', new PropertyValueVaries(45,55, '%'),false),
             new Property('Cyclone Armor', new PropertyValue(3))
         ]
-
-        if(style === "staves") {
-            this.bases = [Bases.staves];
-            this.properties.push(
-                new Property('Faster Cast Rate' , new PropertyValue(35, '%'))
-            )
-        }
 
     }
 
@@ -603,6 +553,7 @@ class CrescentMoonRuneword extends Runeword {
         super();
 
         this.runes = [Runes.get('shael'),Runes.get('um'),Runes.get('tir')];
+        this.bases = [Bases.axes, Bases.swords, Bases.polearms];
 
         this.properties = [
             new PropertyCastChance( new Skill('Chain Lightning', 27), new PropertyValue(10, '%'), 'strike'),
@@ -613,14 +564,6 @@ class CrescentMoonRuneword extends Runeword {
             new PropertyCharges(new Skill('Summon Spirit Wolf', 18), new PropertyValue(30))
         ]
 
-        if(style === 'twohanded') {
-            this.bases = [Bases.polearms, Bases.spears];
-            this.properties.push(new PropertyCastChance( new Skill('Static Field', 13), new PropertyValue(24, '%'), 'strike'));
-        } else {
-            this.bases = [Bases.axes, Bases.swords, Bases.claws];
-            this.properties.push(new PropertyCastChance( new Skill('Static Field', 13), new PropertyValue(12, '%'), 'strike'));
-        }
-
     }
 
 }
@@ -630,6 +573,7 @@ class DoomRuneword extends Runeword {
         super();
 
         this.runes = [Runes.get('hel'),Runes.get('ohm'),Runes.get('um'), Runes.get('lo'), Runes.get('cham')];
+        this.bases = [Bases.axes, Bases.hammers, Bases.polearms];
 
         this.properties = [
             new Property("Holy Freeze Aura", new PropertyValue(12)),
@@ -637,16 +581,8 @@ class DoomRuneword extends Runeword {
             new Property('Increased Attack Speed', new PropertyValue(45,'%')),
             new Property('All Skills', new PropertyValue(2)),
             new Property('Enhanced Damage', new PropertyValueVaries(280,320, '%')),
-            new Property('Enemy Cold Resistance', new PropertyValueVaries(30,50, '%') , false),
+            new Property('Enemy Cold Resistance', new PropertyValueVaries(30,50, '%') , false)
         ]
-
-        if(style === 'wizard') {
-            this.bases = [Bases.staves];
-            this.properties.push(new Property("Faster Cast Rate" , new PropertyValue(30, "%")));
-        } else {
-            this.bases = [Bases.axes, Bases.hammers, Bases.polearms, Bases.swords, Bases.spears];
-            this.properties.push(new Property( 'Prevent Monster Heal' , false));
-        }
 
     }
 
@@ -681,7 +617,7 @@ class FamineRuneword extends Runeword {
 
         this.runes = [Runes.get('fal'),Runes.get('ohm'),Runes.get('ort'),Runes.get('jah')];
 
-        this.bases = [Bases.axes, Bases.hammers, Bases.swords];
+        this.bases = [Bases.axes, Bases.hammers];
 
         this.properties = [
             new Property('Enhanced Damage', new PropertyValueVaries(270,320,'%')),
@@ -884,7 +820,7 @@ class DestructionRuneword extends Runeword {
 
         this.runes = [Runes.get('vex'),Runes.get('lo'),Runes.get('ber'),Runes.get('jah'),Runes.get('ko')];
 
-        this.bases = [Bases.swords, Bases.spears, Bases.polearms];
+        this.bases = [Bases.swords, Bases.polearms];
 
         this.properties = [
 
@@ -989,7 +925,7 @@ class LawbringerRuneword extends Runeword {
 
         this.runes = [Runes.get('amn'),Runes.get('lem'),Runes.get('ko')];
 
-        this.bases = [Bases.hammers, Bases.scepters, Bases.swords, Bases.claws];
+        this.bases = [Bases.hammers, Bases.scepters, Bases.swords];
 
         this.properties = [
             new PropertyCastChance( new Skill('Amplify Damage', 15), new PropertyValue(20, '%'), 'strike'),
@@ -1032,7 +968,7 @@ class ObedienceRuneword extends Runeword {
 
         this.runes = [Runes.get('hel'),Runes.get('ko'),Runes.get('thul'),Runes.get('eth'),Runes.get('fal')];
 
-        this.bases = [Bases.polearms, Bases.spears];
+        this.bases = [Bases.polearms];
 
         this.properties = [
             new PropertyCastChance( new Skill('Enchant', 21), new PropertyValue(30, '%'), 'kill'),
@@ -1074,7 +1010,7 @@ class PrideRuneword extends Runeword {
 
         this.runes = [Runes.get('cham'),Runes.get('sur'),Runes.get('io'),Runes.get('lo')];
 
-        this.bases = [Bases.polearms, Bases.spears];
+        this.bases = [Bases.polearms];
 
         this.properties = [
             new PropertyCastChance( new Skill('Fire Wall', 17), new PropertyValue(25, '%'), 'struck'),
@@ -1095,7 +1031,7 @@ class RiftRuneword extends Runeword {
 
         this.runes = [Runes.get('hel'),Runes.get('ko'),Runes.get('lem'),Runes.get('gul')];
 
-        this.bases = [Bases.polearms, Bases.spears, Bases.scepters];
+        this.bases = [Bases.polearms, Bases.scepters];
 
         this.properties = [
             new PropertyCastChance( new Skill('Tornado', 21), new PropertyValue(20, '%'), 'strike'),
@@ -1116,7 +1052,7 @@ class VoiceOfReasonRuneword extends Runeword {
 
         this.runes = [Runes.get('lem'),Runes.get('ko'),Runes.get('el'),Runes.get('eld')];
 
-        this.bases = [Bases.swords, Bases.maces, Bases.missileweapons];
+        this.bases = [Bases.swords, Bases.maces];
 
         this.properties = [
             new PropertyCastChance( new Skill('Frozen Orb', 16), new PropertyValue(15, '%'), 'strike'),
@@ -1561,7 +1497,7 @@ class ExileRuneword extends Runeword {
         this.bases = Bases.allShields();
 
         this.properties = [
-            new PropertyCastChance( new Skill('Life Tap', 15), new PropertyValue(5, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Life Tap', 15), new PropertyValue(15, '%'), 'strike'),
             new Property('Defiance Aura', new PropertyValueVaries(13,16)),
             new Property('Offensive Auras', new PropertyValue(2), true, 'Paladin'),
             new Property('Faster Block Rate', new PropertyValue(30, '%')),
@@ -1755,7 +1691,6 @@ var ClassicRunewords = [
     new CrescentMoonRuneword('twohanded'),
     new CrescentMoonRuneword('onehanded'),
     new DoomRuneword('fighter'),
-    new DoomRuneword('wizard'),
     new EternityRuneword,
     new FamineRuneword,
     new FortitudeRuneword(Bases.allWeapons()),
@@ -1812,7 +1747,6 @@ var ClassicRunewords = [
     new DeliriumRuneword,
     new HandOfJusticeRuneword,
     new InfinityRuneword,
-    new InfinityRuneword('staves'),
     new LastWishRuneword
 
 ];

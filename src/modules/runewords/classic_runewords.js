@@ -867,12 +867,13 @@ class FaithRuneword extends Runeword {
         this.bases = [Bases.missileweapons];
 
         this.properties = [
+            new Property('All Skills' , new PropertyValueVaries(1,2)),
             new Property('Fanaticism Aura', new PropertyValueVaries(12,15)),
             new Property('Attack Rating' , new PropertyValue(300, '%')),
-            new Property('Enhanced Damage' , new PropertyValueVaries(200, 250, '%')),
+            new Property('Enhanced Damage' , new PropertyValueVaries(280, '%')),
             new Property('Fire Damage' , new PropertyValue(120)),
             new Property('All Resistances' , new PropertyValue(15, '%')),
-            new Property('Reanimate as: Returned' , new PropertyValueVaries(6,8, '%')),
+            new Property('Reanimate as: Returned' , new PropertyValue(10, '%')),
         ]
 
     }

@@ -1561,7 +1561,7 @@ class ExileRuneword extends Runeword {
         this.bases = Bases.allShields();
 
         this.properties = [
-            new PropertyCastChance( new Skill('Amplify Damage', 18), new PropertyValue(25, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Life Tap', 15), new PropertyValue(5, '%'), 'strike'),
             new Property('Defiance Aura', new PropertyValueVaries(13,16)),
             new Property('Offensive Auras', new PropertyValue(2), true, 'Paladin'),
             new Property('Faster Block Rate', new PropertyValue(30, '%')),

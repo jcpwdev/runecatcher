@@ -910,7 +910,7 @@ class IceRuneword extends Runeword {
 
         this.properties = [
             new PropertyCastChance( new Skill('Blizzard', 40), new PropertyValue(100, '%'), 'levelup'),
-            new PropertyCastChance( new Skill('Frost Nova', 32), new PropertyValue(20, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Frost Nova', 22), new PropertyValue(25, '%'), 'strike'),
             new Property('Holy Freeze Aura' , new PropertyValue(18)),
             new Property('Enhanced Damage' , new PropertyValueVaries(140, 210, '%')),
             new Property('Cold Skill Damage' , new PropertyValueVaries(25, 30, '%')),

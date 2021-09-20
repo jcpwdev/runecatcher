@@ -427,8 +427,9 @@ class WhiteRuneword extends Runeword {
         this.bases = [Bases.wands];
 
         this.properties = [
-            new Property('Poison and Bone Skills', new PropertyValue(1), true, 'Necromancer'),
-            new Property('Bone Armor', new PropertyValueVaries(2, 3), true, 'Necromancer'),
+            new Property('Poison and Bone Skills', new PropertyValue(3), true, 'Necromancer'),
+            new Property('Bone Armor', new PropertyValue( 3), true, 'Necromancer'),
+            new Property('Bone Spear', new PropertyValue(2), true, 'Necromancer'),
             new Property('Skeleton Mastery', new PropertyValue(4), true, 'Necromancer'),
             new Property('Magic Damage Reduced', new PropertyValue(4)),
             new Property('Faster Cast Rate', new PropertyValue(20 , '%')),

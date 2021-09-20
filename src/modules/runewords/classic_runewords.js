@@ -282,8 +282,7 @@ class MaliceRuneword extends Runeword {
             new Property('Chance of Open Wounds', new PropertyValue(100, '%')),
             new Property('Monster Defense per Hit', new PropertyValue(100, ), false),
             new Property('Prevent Monster Heal', false),
-            new Property('Drain Life', new PropertyValue(5) , false),
-            new Property('Life Gained After Each Hit', new PropertyValue(2))
+            new Property('Drain Life', new PropertyValue(5) , false)
 
         ]
 

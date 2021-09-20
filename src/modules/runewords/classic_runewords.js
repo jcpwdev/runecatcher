@@ -742,10 +742,10 @@ class PassionRuneword extends Runeword {
             new Property('Increased Attack Speed', new PropertyValue(25, '%')),
             new Property('Enhanced Damage' , new PropertyValueVaries(160, 210,'%')),
             new Property('Attack Rating' , new PropertyValueVaries(50, 80,'%')),
-            new Property('Berserk', new PropertyValue(1)),
+            new Property('Concentrate', new PropertyValue(1)),
             new Property('Zeal', new PropertyValue(1)),
             new Property('Hit blinds Target', new PropertyValue(10)),
-            new PropertyCharges(new Skill('Heart of Wolverine', 8), new PropertyValue(36))
+            new PropertyCharges(new Skill('Heart of Wolverine', 3), new PropertyValue(12))
         ]
 
     }

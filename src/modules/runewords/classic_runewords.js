@@ -342,7 +342,7 @@ class StrengthRuneword extends Runeword {
         this.bases = Bases.allMeleeWeapons();
 
         this.properties = [
-            new Property('Enhanced Damage', new PropertyValueVaries(65,95, '%')),
+            new Property('Enhanced Damage', new PropertyValue(35,'%')),
             new Property('Chance of Crushing Blow', new PropertyValue(25, '%')),
             new Property('Strength', new PropertyValue(20)),
             new Property('Vitality', new PropertyValue(10))

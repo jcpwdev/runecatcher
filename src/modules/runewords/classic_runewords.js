@@ -303,7 +303,7 @@ class MemoryRuneword extends Runeword {
             new Property('Faster Cast Rate', new PropertyValue(33, '%')),
             new Property('Energy Shield', new PropertyValue(3), true, 'Sorceress'),
             new Property('Static Field', new PropertyValue(2), true, 'Sorceress'),
-            new Property('Increase Maximum Mana', new PropertyValueVaries(20, 40,'%' )),
+            new Property('Increase Maximum Mana', new PropertyValue(20,'%' )),
             new Property('Magic Damage Reduced', new PropertyValue(7 ))
 
         ]

@@ -569,19 +569,21 @@ class CrescentMoonRuneword extends Runeword {
 }
 
 class DoomRuneword extends Runeword {
-    constructor(style) {
+    constructor() {
         super();
 
         this.runes = [Runes.get('hel'),Runes.get('ohm'),Runes.get('um'), Runes.get('lo'), Runes.get('cham')];
+
         this.bases = [Bases.axes, Bases.hammers, Bases.polearms];
 
         this.properties = [
             new Property("Holy Freeze Aura", new PropertyValue(12)),
-            new PropertyCastChance(new Skill("Molten Boulder" , 28), new PropertyValue(5,'%'), 'strike'),
+            new PropertyCastChance(new Skill("Volcano" , 18), new PropertyValue(5,'%'), 'strike'),
             new Property('Increased Attack Speed', new PropertyValue(45,'%')),
             new Property('All Skills', new PropertyValue(2)),
+            new Property('Prevent Monster Heal', false),
             new Property('Enhanced Damage', new PropertyValueVaries(280,320, '%')),
-            new Property('Enemy Cold Resistance', new PropertyValueVaries(30,50, '%') , false)
+            new Property('Enemy Cold Resistance', new PropertyValueVaries(40,60, '%') , false)
         ]
 
     }
@@ -1693,7 +1695,7 @@ var ClassicRunewords = [
     new CallToArmsRuneword,
     new ChaosRuneword,
     new CrescentMoonRuneword(),
-    new DoomRuneword('fighter'),
+    new DoomRuneword(),
     new EternityRuneword,
     new FamineRuneword,
     new FortitudeRuneword(Bases.allWeapons()),

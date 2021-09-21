@@ -468,13 +468,13 @@ class BeastRuneword extends Runeword {
         this.bases = [Bases.axes, Bases.scepters, Bases.hammers];
 
         this.properties = [
-            new Property('Fanaticism Aura', new PropertyValueVaries(8,10)),
-            new Property('Enhanced Damage', new PropertyValueVaries(260,290,'%')),
+            new Property('Fanaticism Aura', new PropertyValue(9)),
+            new Property('Enhanced Damage', new PropertyValueVaries(240,270,'%')),
             new Property('Increased Attack Speed', new PropertyValue(40,'%')),
             new Property('Werebear', new PropertyValue(3)),
-            new Property('Maul', new PropertyValue(3)),
-            new Property('Hunger', new PropertyValue(3)),
-            new PropertyCharges(new Skill('Summon Grizzly', 13), new PropertyValue(35))
+            new Property('Lycanthrophy', new PropertyValue(3)),
+            new Property('Strength', new PropertyValueVaries(25,40)),
+            new PropertyCharges(new Skill('Summon Grizzly', 13), new PropertyValue(5))
         ]
 
     }

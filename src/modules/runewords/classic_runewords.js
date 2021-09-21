@@ -719,8 +719,7 @@ class KingslayerRuneword extends Runeword {
             new Property('Extra Gold From Monsters', new PropertyValue(40,'%')),
             new Property('Chance of Open Wounds', new PropertyValue(25,'%')),
             new Property('Chance of Crushing Blow', new PropertyValue(33,'%')),
-            new Property('Vengeance', new PropertyValue(3)),
-            new Property('Repairs Durability', new PropertyValueDuration(1, 10)),
+            new Property('Vengeance', new PropertyValue(1))
 
         ]
 

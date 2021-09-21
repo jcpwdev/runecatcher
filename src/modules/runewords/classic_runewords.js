@@ -1038,11 +1038,11 @@ class RiftRuneword extends Runeword {
         this.bases = [Bases.polearms, Bases.scepters];
 
         this.properties = [
-            new PropertyCastChance( new Skill('Tornado', 21), new PropertyValue(20, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Tornado', 16), new PropertyValue(20, '%'), 'strike'),
             new PropertyCastChance( new Skill('Frozen Orb', 21), new PropertyValue(16, '%'), 'attack'),
             new Property('Magic Damage' ,new PropertyValueRange(160, 250)),
             new Property('Fire Damage' ,new PropertyValueRange(60, 180)),
-            new Property('All Attributes' , new PropertyValueVaries(15, 20)),
+            new Property('All Attributes' , new PropertyValueVaries(5, 10)),
             new Property('Damage to Mana' , new PropertyValue(28,  '%')),
             new PropertyCharges(new Skill('Iron Maiden', 15), new PropertyValue(40))
         ]

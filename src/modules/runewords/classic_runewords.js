@@ -599,12 +599,12 @@ class EternityRuneword extends Runeword {
 
         this.properties = [
             new Property('Enhanced Damage', new PropertyValueVaries(260,310,'%')),
-            new Property('Damage', new PropertyValueRange(70,71)),
             new Property('Indestructible', false),
             new Property('Cannot be Frozen', false),
-            new Property('Reanimate as: Wraith', new PropertyValue(10, '%')),
-            new Property('Revive', new PropertyValue(3, )),
-            new Property('Additional Revives', new PropertyValue(6 )),
+            new Property('Regenerate Mana', new PropertyValue(16, '%')),
+            new Property('Replenish Life', new PropertyValue(16)),
+            new Property('Slows Target', new PropertyValue(33, '%')),
+            new PropertyCharges(new Skill('Revive',8), new PropertyValue(88)),
         ]
 
     }

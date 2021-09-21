@@ -493,10 +493,10 @@ class BreathOfTheDyingRuneword extends Runeword {
             new PropertyCastChance( new Skill('Poison Nova', 20), new PropertyValue(50, '%'), 'kill'),
             new Property('Enhanced Damage', new PropertyValueVaries(330,360,'%')),
             new Property('Increased Attack Speed', new PropertyValue(60,'%')),
-            new Property('Life Stolen per Hit', new PropertyValueVaries(8,10,'%')),
+            new Property('Life Stolen per Hit', new PropertyValueVaries(12,15,'%')),
             new Property('Prevent Monster Heal', false),
             new Property('Damage to Undead', new PropertyValue(125,'%')),
-            new Property('All Attributes', new PropertyValueVaries(20, 30)),
+            new Property('All Attributes', new PropertyValue( 30))
         ]
 
     }

@@ -889,8 +889,8 @@ class GriefRuneword extends Runeword {
 
         this.properties = [
             new PropertyCastChance( new Skill('Venom', 15), new PropertyValue(35, '%'), 'strike'),
-            new Property('Minimum Damage' , new PropertyValueVaries(200, 240)),
-            new Property('Maximum Damage' , new PropertyValueVaries(260, 300)),
+            new Property('Damage' , new PropertyValueVaries(340, 400)),
+            new Property('Ignore Targets Defense' , false),
             new Property('Increased Attack Speed' , new PropertyValueVaries(30, 40, '%')),
             new Property('Damage to Demons' , new PropertyValueScales(1.875, '%')),
             new Property('Enemy Poison Resistance' , new PropertyValueVaries(20,25, '%'), false),

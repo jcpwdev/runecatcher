@@ -525,6 +525,7 @@ class CallToArmsRuneword extends Runeword {
 }
 
 class ChaosRuneword extends Runeword {
+
     constructor() {
         super();
 
@@ -533,13 +534,13 @@ class ChaosRuneword extends Runeword {
         this.bases = [Bases.claws];
 
         this.properties = [
-            new PropertyCastChance( new Skill('Frozen Orb', 21), new PropertyValue(18, '%'), 'strike'),
-            new PropertyCastChance( new Skill('Charged Bolt', 29), new PropertyValue(14, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Frozen Orb', 11), new PropertyValue(9, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Charged Bolt', 9), new PropertyValue(11, '%'), 'strike'),
+            new Property('Increased Attack Speed', new PropertyValue(35,'%')),
             new Property('Enhanced Damage', new PropertyValueVaries(240,290,'%')),
             new Property('Magic Damage', new PropertyValueRange(216, 471 )),
-            new Property('Whirlwind', new PropertyValue(5)),
-            new Property('Life After Demon Kill', new PropertyValue(15)),
-            new Property('Indestructible' , false)
+            new Property('Whirlwind', new PropertyValue(1)),
+            new Property('Life After Demon Kill', new PropertyValue(15))
         ]
 
     }

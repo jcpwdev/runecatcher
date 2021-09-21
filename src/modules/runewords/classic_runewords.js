@@ -931,7 +931,7 @@ class LawbringerRuneword extends Runeword {
         this.bases = [Bases.hammers, Bases.scepters, Bases.swords];
 
         this.properties = [
-            new PropertyCastChance( new Skill('Amplify Damage', 15), new PropertyValue(20, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Decrepify', 15), new PropertyValue(20, '%'), 'strike'),
             new Property('Sanctuary Aura' , new PropertyValueVaries(16,18)),
             new Property('Targets Defense' , new PropertyValue(50,  '%'), false),
             new Property('Fire Damage' , new PropertyValueRange(150, 210)),

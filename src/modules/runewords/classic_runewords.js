@@ -805,8 +805,8 @@ class DeathRuneword extends Runeword {
             new PropertyCastChance( new Skill('Chain Lightning', 44), new PropertyValue(100, '%'), 'death'),
             new PropertyCastChance( new Skill('Glacial Spike', 18), new PropertyValue(25, '%'), 'attack'),
             new Property('Indestructible' , false),
-            new Property('Blood Golem' , new PropertyValue(18)),
-            new Property('Enhanced Damage' , new PropertyValueVaries(300, 355,'%')),
+            new PropertyCharges(new Skill('Blood Golem' , 22), new PropertyValue(15)),
+            new Property('Enhanced Damage' , new PropertyValueVaries(300, 385,'%')),
             new Property('Chance of Crushing Blow' , new PropertyValue(50, '%')),
             new Property('Deadly Strike' , new PropertyValueScales(0.5, '%')),
         ]

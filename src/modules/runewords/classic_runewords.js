@@ -827,13 +827,13 @@ class DestructionRuneword extends Runeword {
 
         this.properties = [
 
-            new PropertyCastChance( new Skill('Frost Nova', 22), new PropertyValue(23, '%'), 'strike'),
-            new PropertyCastChance( new Skill('Molten Boulder', 33), new PropertyValue(5, '%'), 'strike'),
-            new PropertyCastChance( new Skill('Meteor', 45), new PropertyValue(5, '%'), 'strike'),
-            new PropertyCastChance( new Skill('Nova', 32), new PropertyValue(15, '%'), 'attack'),
-            new PropertyCastChance( new Skill('Armageddon', 19), new PropertyValue(5, '%'), 'struck'),
-            new Property('Enhanced Damage' , new PropertyValue(300, '%')),
-            new Property('Increased Attack Speed' , new PropertyValueVaries(30, 40, '%')),
+            new PropertyCastChance( new Skill('Volcano', 12), new PropertyValue(23, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Molten Boulder', 23), new PropertyValue(5, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Meteor', 45), new PropertyValue(100, '%'), 'death'),
+            new PropertyCastChance( new Skill('Nova', 22), new PropertyValue(15, '%'), 'attack'),
+            new Property('Enhanced Damage' , new PropertyValue(350, '%')),
+            new Property('Magic Damage' , new PropertyValueRange(100, 180 )),
+            new Property('Prevent Monster Heal' , false)
         ]
 
     }

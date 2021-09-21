@@ -957,7 +957,8 @@ class OathRuneword extends Runeword {
             new Property('Increased Attack Speed' , new PropertyValue(30,'%')),
             new Property('Enhanced Damage' , new PropertyValueVaries(210,340,  '%')),
             new Property('Magic Absorb' , new PropertyValueVaries(10,15)),
-            new Property('Heart of the Wolverine' , new PropertyValue(8)),
+            new PropertyCharges(new Skill("Heart of Wolverine" , 16) , new PropertyValue(20)),
+            new PropertyCharges(new Skill("Iron Golem" , 16) , new PropertyValue(14)),
             new Property('Indestructible' ,false),
         ]
 

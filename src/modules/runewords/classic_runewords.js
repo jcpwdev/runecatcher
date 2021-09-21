@@ -1024,7 +1024,7 @@ class PrideRuneword extends Runeword {
             new PropertyCastChance( new Skill('Fire Wall', 17), new PropertyValue(25, '%'), 'struck'),
             new Property('Concentration Aura' , new PropertyValueVaries(16, 20)),
             new Property('Attack Rating' , new PropertyValueVaries(260, 300,  '%')),
-            new Property('Enhanced Maximum Damage' , new PropertyValueScales(3,  '%')),
+            new Property('Damage to Demons' , new PropertyValueScales(1,  '%')),
             new Property('Extra Gold From Monsters' , new PropertyValueScales(1.875,  '%')),
             new Property('Lightning Damage' ,new PropertyValueRange(50, 280)),
             new Property('Replenish Life' , new PropertyValue(8)),

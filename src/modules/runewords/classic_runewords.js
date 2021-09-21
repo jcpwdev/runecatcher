@@ -988,7 +988,8 @@ class ObedienceRuneword extends Runeword {
     }
 }
 
-class PhoenixRuneword extends Runeword { // weapon stats weird
+class PhoenixRuneword extends Runeword {
+
     constructor(bases) {
         super();
 
@@ -998,9 +999,9 @@ class PhoenixRuneword extends Runeword { // weapon stats weird
 
         this.properties = [
             new PropertyCastChance( new Skill('Blaze', 40), new PropertyValue(100, '%'), 'levelup'),
-            new PropertyCastChance( new Skill('Fireball', 22), new PropertyValue(20, '%'), 'strike'),
+            new PropertyCastChance( new Skill('Firestorm', 22), new PropertyValue(40, '%'), 'strike'),
             new Property('Redemption Aura' , new PropertyValueVaries(10, 15)),
-            new Property('Enhanced Damage' , new PropertyValueVaries(400, 450,  '%')),
+            new Property('Enhanced Damage' , new PropertyValueVaries(350, 400,  '%')),
             new Property('Enemy Fire Resistance' ,new PropertyValue(28, '%'), false),
             new Property('Defense vs. Missiles' , new PropertyValueVaries(350, 400)),
             new Property('Fire Absorb' , new PropertyValueVaries(15, 21))

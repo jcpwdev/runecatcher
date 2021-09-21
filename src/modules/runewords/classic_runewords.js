@@ -383,13 +383,13 @@ class InfinityRuneword extends Runeword {
         this.bases = [Bases.polearms];
 
         this.properties = [
-            new PropertyCastChance( new Skill('Lightning', 20), new PropertyValue(50, '%'), 'kill'),
+            new PropertyCastChance( new Skill('Chain Lightning', 20), new PropertyValue(50, '%'), 'kill'),
             new Property('Enhanced Damage', new PropertyValueVaries(255,325, '%')),
             new Property('Conviction Aura', new PropertyValue(12)),
             new Property('Faster Run/Walk', new PropertyValue(35, '%')),
             new Property('Vitality', new PropertyValueScales(0.5)),
             new Property('Enemy Lightning Resistance', new PropertyValueVaries(45,55, '%'),false),
-            new Property('Cyclone Armor', new PropertyValue(3))
+            new PropertyCharges(new Skill('Cyclone Armor', 21), new PropertyValue(30))
         ]
 
     }

@@ -612,6 +612,7 @@ class EternityRuneword extends Runeword {
 }
 
 class FamineRuneword extends Runeword {
+
     constructor() {
         super();
 
@@ -622,13 +623,12 @@ class FamineRuneword extends Runeword {
         this.properties = [
             new Property('Enhanced Damage', new PropertyValueVaries(270,320,'%')),
             new Property('Increased Attack Speed', new PropertyValue(30, '%')),
-            new Property('Indestructible', false),
-            new Property('Enemy Lightning Resistance', new PropertyValueVaries(10, 20, '%'), false),
-            new Property('Enemy Fire Resistance', new PropertyValueVaries(10, 20, '%'), false),
-            new Property('Enemy Cold Resistance', new PropertyValueVaries(10, 20, '%'), false),
-            new Property('Lightning Damage', new PropertyValueRange(150, 300)),
-            new Property('Fire Damage', new PropertyValueRange(150, 300)),
-            new Property('Cold Damage', new PropertyValueRange(150, 300)),
+            new Property('Prevent Monster Heal', false),
+            new Property('Lightning Damage', new PropertyValueRange(20, 200)),
+            new Property('Fire Damage', new PropertyValueRange(50, 200)),
+            new Property('Cold Damage', new PropertyValueRange(50, 200)),
+            new Property('Life Stolen on Hit', new PropertyValue(12, '%')),
+            new Property('Magic Damage', new PropertyValueRange(180, 200))
         ]
 
     }

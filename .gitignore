@@ -3,6 +3,7 @@ dist/main.*.js
 dist/main.js*
 dist/index.html
 dist/
+/dist/*
 node_modules/
 .DS_Store
 .idea/

@@ -388,7 +388,6 @@ export class Runeword {
 
         for(let rune of this.runes) {
             let runeLi = document.createElement('li');
-            console.log(rune);
             runeLi.appendChild(rune.render());
             runelist.appendChild(runeLi);
         }

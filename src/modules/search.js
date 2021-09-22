@@ -176,7 +176,7 @@ class Search {
                 }
 
                 // AND-Search. Check for propertiesFound > 0 if OR search
-                if (propertiesFound === parameters.properties.length || directRunewordHit) {
+                if (propertiesFound >= parameters.properties.length || directRunewordHit) {
                     passedChecks++;
                 }
 

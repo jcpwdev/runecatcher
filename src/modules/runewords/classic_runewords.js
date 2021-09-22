@@ -405,7 +405,7 @@ class VenomRuneword extends Runeword {
         this.bases = Bases.allMeleeWeapons();
 
         this.properties = [
-            new Property('Poison Damage', new PropertyValueDuration(273,6)),
+            new Property('Poison Damage', new PropertyValueDuration(213.5,7)),
             new Property('Ignore Targets Defense', false),
             new Property('Mana Stolen per Hit', new PropertyValue(7, '%')),
             new PropertyCharges(new Skill('Poison Explosion', 15), new PropertyValue(27)),

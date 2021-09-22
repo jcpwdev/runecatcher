@@ -279,6 +279,19 @@ export class Runeword {
         }
 
 
+        function combinePoisonDamage(combinedProperty, property) {
+            var dps1 = combinedProperty.value.minValue / combinedProperty.value.duration;
+            var dps2 = property.value.minValue / property.value.duration;
+
+            var combinedDuration = (combinedProperty.value.duration + property.value.duration ) / 2;
+            var combinedDps = dps1 + dps2 ;
+
+            combinedProperty.value.minValue = Math.floor(combinedDps * combinedDuration);
+            combinedProperty.value.duration = combinedDuration;
+
+            return combinedProperty;
+        }
+
         // try to calculate everything together that is in one stack
         for ( let propertyStackName in sortedProperties) {
 
@@ -338,9 +351,10 @@ export class Runeword {
                 for (let property of propertyStack) {
                     if(typeof property === 'undefined' || property.value === false) continue;
 
-                    // actually just for TalDolMal - no rule
+                    // actually just for TalDolMal - only PropertyValueDuration are Poison
                     if(combinedProperty.value.constructor.name === 'PropertyValueDuration') {
 
+                        combinedProperty = combinePoisonDamage(combinedProperty, property);
                         continue;
                     }
 

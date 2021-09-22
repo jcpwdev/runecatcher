@@ -1,12 +1,18 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
     entry: './src/index.js',
     mode : 'development',
     output: {
-        filename: 'main.js',
+        filename: 'main.[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
     },
+    plugins: [new HtmlWebpackPlugin({
+        title : "Diablo 2 Resurrected Runecatcher",
+        filename : "index.html",
+        template : "./src/html/index.html"
+    })],
     module: {
 
         rules: [

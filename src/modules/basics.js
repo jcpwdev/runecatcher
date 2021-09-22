@@ -313,6 +313,14 @@ export class Runeword {
 
                     if (constructor.name === 'PropertyValueVaries' || constructor.name === 'PropertyValueRange') {
                         combinedPropertyValue = new constructor(propertyStack[0].value.minValue, propertyStack[0].value.maxValue, propertyStack[0].value.unit);
+
+                    } else if (constructor.name === 'PropertyValueDuration'){
+                        combinedPropertyValue = new constructor(
+                            propertyStack[0].value.minValue,
+                            propertyStack[0].value.duration,
+                            propertyStack[0].value.unit
+                        );
+
                     } else { // assuming plain "PropertyValue"
                         combinedPropertyValue = new constructor(propertyStack[0].value.minValue, propertyStack[0].value.unit);
                     }
@@ -330,11 +338,18 @@ export class Runeword {
                 for (let property of propertyStack) {
                     if(typeof property === 'undefined' || property.value === false) continue;
 
+                    // actually just for TalDolMal - no rule
+                    if(combinedProperty.value.constructor.name === 'PropertyValueDuration') {
+
+                        continue;
+                    }
+
                     let currentValue = parseInt((combinedProperty.positive ? '+' : '-') + combinedProperty.value.minValue);
                     let addedValue = parseInt((property.positive ? '+' : '-') + property.value.minValue);
 
                     let newValue = currentValue + addedValue;
                     combinedProperty.value.minValue = Math.abs(newValue);
+
 
                     // if our master prop has 2 values (min and max) add the other value on both of them
                     if(combinedProperty.value.constructor.name === 'PropertyValueVaries' || combinedProperty.value.constructor.name === 'PropertyValueRange') {

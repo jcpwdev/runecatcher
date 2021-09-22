@@ -26,6 +26,10 @@ export class PropertyValueDuration extends PropertyValue {
         this.duration = duration;
     }
 
+    toString() {
+        return Math.floor(this.minValue) + this.unit;
+    }
+
     detailedStat(name, positive) {
         return this.toString() + ' ' + name + ' over ' + this.duration + ' seconds';
     }

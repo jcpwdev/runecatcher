@@ -233,7 +233,7 @@ class LeafRuneword extends Runeword {
         this.bases = [Bases.staves];
 
         this.properties = [
-            new Property('Fire Skills', new PropertyValueVaries(1, 2)),
+            new Property('Fire Skills', new PropertyValue(3)),
             new Property('Fire Bolt', new PropertyValue(3), true, 'Sorceress'),
             new Property('Inferno', new PropertyValue(3), true, 'Sorceress'),
             new Property('Warmth', new PropertyValue(3), true, 'Sorceress'),

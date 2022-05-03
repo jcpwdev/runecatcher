@@ -7,6 +7,7 @@ module.exports = {
     output: {
         filename: 'main.[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
+        clean: true
     },
     plugins: [new HtmlWebpackPlugin({
         title : "Diablo 2 Resurrected Runecatcher",

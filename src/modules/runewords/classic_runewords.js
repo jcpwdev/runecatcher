@@ -106,7 +106,7 @@ class SilenceRuneword extends Runeword {
             new Property('Increased Attack Speed',  new PropertyValue(20 , '%')),
             new Property('Faster Hit Recovery',  new PropertyValue(20 , '%')),
             new Property('Enhanced Damage', new PropertyValue(200 , '%')),
-            new Property('Mana Stolen per Hit', new PropertyValue(4 , '%')),
+            new Property('Mana Stolen on Hit', new PropertyValue(4 , '%')),
             new Property('Hit blinds Target', new PropertyValue(33 )),
             new Property('All Resistances', new PropertyValue(75, '%' )),
             new Property('Replenish Life', new PropertyValue(15,  ))
@@ -151,7 +151,7 @@ class FuryRuneword extends Runeword {
             new Property('Increased Attack Speed', new PropertyValue(40,'%')),
             new Property('Chance of Open Wounds', new PropertyValue(66, '%')),
             new Property('Deadly Strike', new PropertyValue(33, '%')),
-            new Property('Life Stolen per Hit', new PropertyValue(6, '%')),
+            new Property('Life Stolen on Hit', new PropertyValue(6, '%')),
             new Property('Frenzy', new PropertyValue(5), true, 'Barbarian'),
             new Property('Prevent Monster Heal', false)
         ]
@@ -279,7 +279,7 @@ class MaliceRuneword extends Runeword {
         this.properties = [
             new Property('Enhanced Damage', new PropertyValue(33, '%')),
             new Property('Chance of Open Wounds', new PropertyValue(100, '%')),
-            new Property('Monster Defense per Hit', new PropertyValue(100, ), false),
+            new Property('Monster Defense on Hit', new PropertyValue(100, ), false),
             new Property('Prevent Monster Heal', false),
             new Property('Drain Life', new PropertyValue(5) , false)
 
@@ -407,7 +407,7 @@ class VenomRuneword extends Runeword {
         this.properties = [
             new Property('Poison Damage', new PropertyValueDuration(213.5,7)),
             new Property('Ignore Targets Defense', false),
-            new Property('Mana Stolen per Hit', new PropertyValue(7, '%')),
+            new Property('Mana Stolen on Hit', new PropertyValue(7, '%')),
             new PropertyCharges(new Skill('Poison Explosion', 15), new PropertyValue(27)),
             new PropertyCharges(new Skill('Poison Nova', 13), new PropertyValue(11)),
         ]
@@ -493,7 +493,7 @@ class BreathOfTheDyingRuneword extends Runeword {
             new PropertyCastChance( new Skill('Poison Nova', 20), new PropertyValue(50, '%'), 'kill'),
             new Property('Enhanced Damage', new PropertyValueVaries(330,360,'%')),
             new Property('Increased Attack Speed', new PropertyValue(60,'%')),
-            new Property('Life Stolen per Hit', new PropertyValueVaries(12,15,'%')),
+            new Property('Life Stolen on Hit', new PropertyValueVaries(12,15,'%')),
             new Property('Prevent Monster Heal', false),
             new Property('Damage to Undead', new PropertyValue(125,'%')),
             new Property('All Attributes', new PropertyValue( 30))
@@ -1250,8 +1250,8 @@ class ChainsOfHonorRuneword extends Runeword {
             new Property('All Skills', new PropertyValue(2)),
             new Property('Damage to Demons', new PropertyValue(200,'%')),
             new Property('Damage to Undead', new PropertyValue(100,'%')),
-            new Property('Life Stolen per Hit', new PropertyValue(8,'%')),
-            new Property('Enhanced Defense', new PropertyValue(70, '%')),
+            new Property('Life Stolen on Hit', new PropertyValueVaries(8,10,'%')),
+            new Property('Prevent Monster Heal', new PropertyValue(70, '%')),
             new Property('Strength', new PropertyValue(20)),
             new Property('All Resistances', new PropertyValue(50, '%'))
         ]
@@ -1667,6 +1667,187 @@ class LastWishRuneword extends Runeword {
     }
 }
 
+class FlickeringFlameRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("nef"),
+            Runes.get("pul"),
+            Runes.get("vex")
+        ];
+
+
+        this.bases = Bases.allHelmets()
+
+        this.properties = [
+            new Property('Resist Fire Aura', new PropertyValueVaries(4,8)),
+            new Property('Fire Skills', new PropertyValue(3)),
+            new Property('Enemy Fire Resistance', new PropertyValueVaries(10,15,"%"), false),
+            new Property('Cold Damage', new PropertyValueRange(3,14)),
+            new Property('Mana', new PropertyValueVaries(50,75)),
+            new Property('Half Freeze Duration', false),
+            new Property('Poison Length Reduction', new PropertyValue(50, "%"))
+        ]
+    }
+}
+
+class MistRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("cham"),
+            Runes.get("shael"),
+            Runes.get("gul"),
+            Runes.get("thul"),
+            Runes.get("ith")
+        ];
+
+
+        this.bases = [Bases.missileweapons];
+
+        this.properties = [
+            new Property('Concentration Aura', new PropertyValueVaries(8,12)),
+            new Property('All Skills', new PropertyValue(3)),
+            new Property('Piercing Attack', new PropertyValue(100, "%")),
+            new Property('Enhanced Damage', new PropertyValueVaries(325,375, "%")),
+            new Property('Vitality', new PropertyValue(24)),
+            new Property('All Resistances', new PropertyValue(40, "%"))
+        ]
+    }
+}
+
+class ObsessionRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("zod"),
+            Runes.get("ist"),
+            Runes.get("lem"),
+            Runes.get("lum"),
+            Runes.get("io"),
+            Runes.get("nef")
+        ];
+
+
+        this.bases = [Bases.staves];
+
+        this.properties = [
+            new Property('All Skills', new PropertyValue(4)),
+            new PropertyCastChance(new Skill("Weaken", 10), new PropertyValue(24, "%"),"struck"),
+            new Property('Faster Cast Rate', new PropertyValue(65, "%")),
+            new Property('Faster Hit Recovery', new PropertyValue(60, "%")),
+            new Property('All Resistances', new PropertyValueVaries(60, 70, "%")),
+            new Property('Maximum Life', new PropertyValueVaries(15, 25, "%")),
+            new Property('Regenerate Mana', new PropertyValueVaries(15, 30, "%"))
+        ]
+    }
+}
+
+class PatternRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("tal"),
+            Runes.get("ort"),
+            Runes.get("thul")
+        ];
+
+
+        this.bases = [Bases.claws];
+
+        this.properties = [
+            new Property('Faster Block Rate', new PropertyValue(30, "%")),
+            new Property('Attack Rating', new PropertyValue(10, "%")),
+            new Property('Enhanced Damage', new PropertyValueVaries(40, 80, "%")),
+            new Property('Fire Damage', new PropertyValueRange(17, 62)),
+            new Property('Strength', new PropertyValue(6)),
+            new Property('Dexterity', new PropertyValue(6)),
+            new Property('All Resistances', new PropertyValue(15, "%"))
+        ]
+    }
+}
+
+class PlagueRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("cham"),
+            Runes.get("shael"),
+            Runes.get("um")
+        ];
+
+
+        this.bases = [Bases.claws, Bases.swords]; // todo: dagger
+
+        this.properties = [
+            new PropertyCastChance(new Skill("Poison Nova", 15), new PropertyValue(25, "%"), "strike"),
+            new PropertyCastChance(new Skill("Lower Resist", 12), new PropertyValue(20, "%"), "struck"),
+            new Property("Cleansing Aura", new PropertyValueVaries(13,17)),
+            new Property("All Skills", new PropertyValueVaries(1,2)),
+            new Property("Enhanced Damage", new PropertyValueVaries(220,320, "%")),
+            new Property("Enemy Poison Resistance", new PropertyValue(23, "%"), false),
+            new Property( "Deadly Strike", new PropertyValueScales(0.3, "%"))
+        ]
+    }
+}
+
+class UnbendingWillRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("fal"),
+            Runes.get("io"),
+            Runes.get("ith"),
+            Runes.get("eld"),
+            Runes.get("el"),
+            Runes.get("hel")
+        ];
+
+
+        this.bases = [Bases.claws, Bases.swords];
+
+        this.properties = [
+            new PropertyCastChance(new Skill("Taunt", 18), new PropertyValue(18, "%"), "strike"),
+            new Property("Combat Skills", new PropertyValue(3), true, "Barbarian"),
+            new Property("Increased Attack Speed", new PropertyValueVaries(20,30, "%")),
+            new Property("Enhanced Damage", new PropertyValueVaries(300,350, "%")),
+            new Property("Life Stolen on Hit", new PropertyValueVaries(8,10, "%")),
+            new Property('Prevent Monster Heal', false),
+            new Property("Damage Reduced", new PropertyValue(8))
+        ]
+    }
+}
+
+class WisdomRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("pul"),
+            Runes.get("ith"),
+            Runes.get("eld")
+        ];
+
+
+        this.bases = Bases.allHelmets();
+
+        this.properties = [
+            new Property("Piercing Attack", new PropertyValue(33, "%")),
+            new Property("Attack Rating", new PropertyValueVaries(15,25, "%")),
+            new Property("Mana Stolen on Hit", new PropertyValueVaries(4,8, "%")),
+            new Property("Energy", new PropertyValue(10)),
+            new Property("Cannot be Frozen", false),
+            new Property("Mana after each Kill", new PropertyValue(5))
+        ]
+    }
+}
+
 
 
 var ClassicRunewords = [
@@ -1752,7 +1933,14 @@ var ClassicRunewords = [
     new DeliriumRuneword,
     new HandOfJusticeRuneword,
     new InfinityRuneword,
-    new LastWishRuneword
+    new LastWishRuneword,
+    new FlickeringFlameRuneword,
+    new MistRuneword,
+    new ObsessionRuneword,
+    new PatternRuneword,
+    new PlagueRuneword,
+    new UnbendingWillRuneword,
+    new WisdomRuneword
 
 ];
 

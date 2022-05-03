@@ -246,12 +246,12 @@ class LeafRuneword extends Runeword {
 }
 
 class InsightRuneword extends Runeword {
-    constructor() {
+    constructor(bases) {
         super();
 
         this.runes = [Runes.get('ral'),Runes.get('tir'), Runes.get('tal') , Runes.get('sol')];
 
-        this.bases = [Bases.staves, Bases.polearms];
+        this.bases = bases;
 
         this.properties = [
             new Property('Meditation Aura', new PropertyValueVaries(12, 17)),
@@ -1863,7 +1863,8 @@ var ClassicRunewords = [
     new HonorRuneword,
     new KingsGraceRuneword,
     new LeafRuneword,
-    new InsightRuneword,
+    new InsightRuneword([Bases.staves, Bases.polearms]),
+    new InsightRuneword([Bases.missileweapons]),
     new MaliceRuneword,
     new MemoryRuneword,
     new MelodyRuneword,

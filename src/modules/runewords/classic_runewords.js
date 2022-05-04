@@ -246,12 +246,12 @@ class LeafRuneword extends Runeword {
 }
 
 class InsightRuneword extends Runeword {
-    constructor(bases) {
+    constructor() {
         super();
 
         this.runes = [Runes.get('ral'),Runes.get('tir'), Runes.get('tal') , Runes.get('sol')];
 
-        this.bases = bases;
+        this.bases = [Bases.spears, Bases.staves, Bases.missileweapons];
 
         this.properties = [
             new Property('Meditation Aura', new PropertyValueVaries(12, 17)),
@@ -380,7 +380,7 @@ class InfinityRuneword extends Runeword {
 
         this.runes = [Runes.get('ber'),Runes.get('mal'),Runes.get('ber'),Runes.get('ist')];
 
-        this.bases = [Bases.polearms];
+        this.bases = [Bases.polearms, Bases.spears];
 
         this.properties = [
             new PropertyCastChance( new Skill('Chain Lightning', 20), new PropertyValue(50, '%'), 'kill'),
@@ -975,7 +975,7 @@ class ObedienceRuneword extends Runeword {
 
         this.runes = [Runes.get('hel'),Runes.get('ko'),Runes.get('thul'),Runes.get('eth'),Runes.get('fal')];
 
-        this.bases = [Bases.polearms];
+        this.bases = [Bases.polearms, Bases.spears];
 
         this.properties = [
             new PropertyCastChance( new Skill('Enchant', 21), new PropertyValue(30, '%'), 'kill'),
@@ -1018,7 +1018,7 @@ class PrideRuneword extends Runeword {
 
         this.runes = [Runes.get('cham'),Runes.get('sur'),Runes.get('io'),Runes.get('lo')];
 
-        this.bases = [Bases.polearms];
+        this.bases = [Bases.polearms, Bases.spears];
 
         this.properties = [
             new PropertyCastChance( new Skill('Fire Wall', 17), new PropertyValue(25, '%'), 'struck'),
@@ -1863,8 +1863,7 @@ var ClassicRunewords = [
     new HonorRuneword,
     new KingsGraceRuneword,
     new LeafRuneword,
-    new InsightRuneword([Bases.staves, Bases.polearms]),
-    new InsightRuneword([Bases.missileweapons]),
+    new InsightRuneword,
     new MaliceRuneword,
     new MemoryRuneword,
     new MelodyRuneword,

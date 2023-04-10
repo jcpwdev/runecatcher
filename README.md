@@ -10,7 +10,8 @@ Feel free to email me at support@runecatcher.app, open an issue here in GitHub o
 The Runecatcher App can be run locally, plain in your browser.
 1. Clone the "classic" branch of this repo
 2. `npm install`
-3. `npm run build`
-4. open dist/index.html in your browser
+3. if using Node > 16, set `export NODE_OPTIONS=--openssl-legacy-provider` via Terminal
+4. `npm run build`
+5. open dist/index.html in your browser
 
 `npm run watch` is available to trigger rebuild on saving files.

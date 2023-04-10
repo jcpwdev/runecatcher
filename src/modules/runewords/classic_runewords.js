@@ -1849,6 +1849,118 @@ class WisdomRuneword extends Runeword {
 }
 
 
+class BulwarkRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("shael"),
+            Runes.get("io"),
+            Runes.get("sol")
+        ];
+
+
+        this.bases = Bases.allHelmets();
+
+        this.properties = [
+            new Property("Enhanced Defense", new PropertyValueVaries(75,100, "%")),
+            new Property("Life Stolen per Hit", new PropertyValueVaries(4,6, "%")),
+            new Property("Physical Damage Reduced", new PropertyValueVaries(10,15, "%")),
+            new Property("Maximum Life", new PropertyValue(5, "%")),
+            new Property("Replenish Life", new PropertyValue(20)),
+        ]
+    }
+}
+
+class CureRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("shael"),
+            Runes.get("io"),
+            Runes.get("tal")
+        ];
+
+
+        this.bases = Bases.allHelmets();
+
+        this.properties = [
+            new Property("Enhanced Defense", new PropertyValueVaries(75,100, "%")),
+            new Property("Poison Resistance", new PropertyValueVaries(10,30, "%")),
+            new Property("Poison Length Reduction", new PropertyValue(75, "%")),
+            new Property("Maximum Life", new PropertyValue(5, "%"))
+        ]
+    }
+}
+
+class GroundRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("shael"),
+            Runes.get("io"),
+            Runes.get("ort")
+        ];
+
+
+        this.bases = Bases.allHelmets();
+
+        this.properties = [
+            new Property("Enhanced Defense", new PropertyValueVaries(75,100, "%")),
+            new Property("Lightning Resistance", new PropertyValueVaries(10,30, "%")),
+            new Property("Lightning Absorb", new PropertyValueVaries(10,15, "%")),
+            new Property("Maximum Life", new PropertyValue(5, "%"))
+        ]
+    }
+}
+
+class HearthRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("shael"),
+            Runes.get("io"),
+            Runes.get("thul")
+        ];
+
+
+        this.bases = Bases.allHelmets();
+
+        this.properties = [
+            new Property("Enhanced Defense", new PropertyValueVaries(75,100, "%")),
+            new Property("Cold Resistance", new PropertyValueVaries(10,30, "%")),
+            new Property("Cold Absorb", new PropertyValueVaries(10,15, "%")),
+            new Property("Maximum Life", new PropertyValue(5, "%"))
+        ]
+    }
+}
+
+class TemperRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("shael"),
+            Runes.get("io"),
+            Runes.get("ral")
+        ];
+
+
+        this.bases = Bases.allHelmets();
+
+        this.properties = [
+            new Property("Enhanced Defense", new PropertyValueVaries(75,100, "%")),
+            new Property("Fire Resistance", new PropertyValueVaries(10,30, "%")),
+            new Property("Fire Absorb", new PropertyValueVaries(10,15, "%")),
+            new Property("Maximum Life", new PropertyValue(5, "%"))
+        ]
+    }
+}
+
+
 
 var ClassicRunewords = [
     new SteelRuneword,
@@ -1940,7 +2052,12 @@ var ClassicRunewords = [
     new PatternRuneword,
     new PlagueRuneword,
     new UnbendingWillRuneword,
-    new WisdomRuneword
+    new WisdomRuneword,
+    new BulwarkRuneword,
+    new CureRuneword,
+    new TemperRuneword,
+    new HearthRuneword,
+    new GroundRuneword
 
 ];
 

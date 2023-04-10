@@ -1960,6 +1960,31 @@ class TemperRuneword extends Runeword {
     }
 }
 
+class HustleRuneword extends Runeword {
+    constructor(bases) {
+        super();
+
+        this.runes = [
+            Runes.get("shael"),
+            Runes.get("ko"),
+            Runes.get("eld")
+        ];
+
+
+        this.bases = bases;
+
+        this.properties = bases[0].slot === "armor" ? [
+            new Property("Faster Run/Walk", new PropertyValue(50, "%")),
+            new Property("Increased Attack Speed", new PropertyValue(20, "%")),
+            new Property("Slower Stamina Drain", new PropertyValue(35, "%")),
+        ] : [
+            new PropertyCastChance( new Skill('Burst Of Speed', 9), new PropertyValue(5, '%'), 'strike'),
+            new Property("Increased Attack Speed", new PropertyValue(10, "%")),
+            new Property("Enhanced Damage", new PropertyValueVaries(130, 150, "%")),
+        ];
+    }
+}
+
 
 
 var ClassicRunewords = [
@@ -2057,7 +2082,9 @@ var ClassicRunewords = [
     new CureRuneword,
     new TemperRuneword,
     new HearthRuneword,
-    new GroundRuneword
+    new GroundRuneword,
+    new HustleRuneword(Bases.allWeapons()),
+    new HustleRuneword(Bases.allArmors())
 
 ];
 

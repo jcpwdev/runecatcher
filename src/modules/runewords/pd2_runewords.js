@@ -1,5 +1,5 @@
-import { PD2Runes as Runes } from '../runes/pd2_runes';
-import Bases from '../bases';
+import { PD2Runes as Runes } from '../runes/pd2_runes.js';
+import Bases from '../bases.js';
 
 import {
     Property,
@@ -8,7 +8,7 @@ import {
     PropertyValueRange,
     PropertyValueVaries,
     PropertyValueScales, PropertyCastChance, Skill, PropertyCharges, Runeword
-} from "../basics";
+} from "../basics.js";
 
 class SpiritRuneword extends Runeword {
 

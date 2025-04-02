@@ -1,6 +1,6 @@
 import choices from "choices.js";
-import Bases from "./bases";
-import {makeSlugReadable} from "./basics";
+import Bases from "./bases.js";
+import {makeSlugReadable} from "./basics.js";
 
 class Search {
 

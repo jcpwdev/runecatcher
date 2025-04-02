@@ -446,7 +446,7 @@ export class Rune {
         if (new.target === Rune) {
             throw new TypeError("Cannot construct a Rune Class instances directly");
         }
-        this.name = this.constructor.name.substr(0 , this.constructor.name.indexOf('Rune'));
+        this.name = this.constructor.name.substring(0 , this.constructor.name.indexOf('Rune'));
 
     }
 

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'runes';
-  src:  url('../fonts/runes.eot?vb2yvy');
-  src:  url('../fonts/runes.eot?vb2yvy#iefix') format('embedded-opentype'),
-    url('../fonts/runes.ttf?vb2yvy') format('truetype'),
-    url('../fonts/runes.woff?vb2yvy') format('woff'),
-    url('../fonts/runes.svg?vb2yvy#runes') format('svg');
+  src:  url('../../public/fonts/runes.eot?vb2yvy');
+  src:  url('../../public/fonts/runes.eot?vb2yvy#iefix') format('embedded-opentype'),
+    url('../../public/fonts/runes.ttf?vb2yvy') format('truetype'),
+    url('../../public/fonts/runes.woff?vb2yvy') format('woff'),
+    url('../../public/fonts/runes.svg?vb2yvy#runes') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

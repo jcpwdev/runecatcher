@@ -1,5 +1,5 @@
-import { ClassicRunes as Runes } from '../runes/classic_runes';
-import Bases from '../bases';
+import { ClassicRunes as Runes } from '../runes/classic_runes.js';
+import Bases from '../bases.js';
 
 import {
     Property,
@@ -8,7 +8,7 @@ import {
     PropertyValueRange,
     PropertyValueVaries,
     PropertyValueScales, PropertyCastChance, Skill, PropertyCharges, Runeword
-} from "../basics";
+} from "../basics.js";
 
 class SpiritRuneword extends Runeword {
 

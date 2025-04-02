@@ -1,5 +1,5 @@
 
-import {Property, PropertyValue, PropertyValueDuration, PropertyValueRange, Rune, RuneFactory} from "../basics";
+import {Property, PropertyValue, PropertyValueDuration, PropertyValueRange, Rune, RuneFactory} from "../basics.js";
 
 
 export class PD2Runes extends RuneFactory {

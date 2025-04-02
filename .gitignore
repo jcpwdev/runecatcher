@@ -1,7 +1,4 @@
-dist/fonts
-dist/main.*.js
-dist/main.js*
-dist/index.html
+dist/
 node_modules/
 .DS_Store
 .idea/

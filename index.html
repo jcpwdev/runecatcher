@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Runecatcher</title>
+</head>
+<body>
+<h1 class="page-headline">Runecatcher <small class="small text-unique">D2R</small></h1>
+
+<div class="form">
+
+    <select id="propertychoices" multiple="multiple">
+        <option value="">Properties your runeword should have</option>
+    </select>
+
+    <div class="advanced-options" id="advancedOptions">
+
+        <div class="options-row">
+            <p class="runes-selection">Show Runewords with <select id="runesOperator" class="inline-input">
+                <option>any</option>
+                <option value="only">only</option>
+            </select> Runes from <select id="runesFrom" class="inline-input"></select> to <select id="runesTo"
+                                                                                                  class="inline-input"></select>
+            </p>
+            <button id="resetAvailableRunes" class="inline-button">Reset Runes</button>
+            <button id="showAllRunes" class="inline-button">Show all Runes</button>
+        </div>
+
+        <div class="options-row">
+
+            <div id="availableRunes" class="runes-container"></div>
+
+        </div>
+
+        <div class="options-row">
+            <select id="basesSelect" multiple="multiple">
+                <option value="">Possible Bases your runeword should use</option>
+            </select>
+            <p>with <input type="number" step="1" min="2" max="6" id="socketsMin" value="2" class="inline-input"> to
+                <input type="number" step="1" min="2" max="6" id="socketsMax" value="6" class="inline-input"> Sockets
+            </p>
+        </div>
+
+        <div class="options-row">
+
+            <p>Display Runeword Properties:</p>
+
+            <input type="radio" name="listingStyle" value="" id="listingStyleSeperated">
+            <label class="listing-style-label" for="listingStyleSeperated">
+                Seperated
+            </label>
+
+            <input type="radio" name="listingStyle" checked="checked" value="computed" id="listingStyleComputed">
+            <label class="listing-style-label" for="listingStyleComputed">
+                Computed
+            </label>
+
+        </div>
+
+
+    </div>
+
+    <button id="advancedOptionsToggle" class="advanced-options-button">Advanced Options</button>
+</div>
+
+<div class="results-count" id="resultsCount"></div>
+
+<div class="search-query" id="searchQuery"></div>
+
+<div id="results" class="results-container"></div>
+
+<footer class="footer">
+    Send ideas, improvements, feedback to support at runecatcher dot app!
+</footer>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

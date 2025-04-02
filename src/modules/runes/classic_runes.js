@@ -2,7 +2,7 @@
 import {Property, PropertyValue, PropertyValueDuration, PropertyValueRange, Rune, RuneFactory} from "../basics.js";
 
 
-export class PD2Runes extends RuneFactory {
+export class ClassicRunes extends RuneFactory {
 
     static el = class ElRune extends Rune {
 
@@ -239,10 +239,10 @@ export class PD2Runes extends RuneFactory {
             super();
 
             this.properties = {
-                weapon : new Property('Enhanced Damage' , new PropertyValue(25,'%')),
-                armor : new Property('Replenish Life' , new PropertyValue(10)),
-                helmet : new Property('Replenish Life' , new PropertyValue(10)),
-                shield : new Property('Replenish Life' , new PropertyValue(10))
+                weapon : new Property('Hit causes Monster to flee' , new PropertyValue(25,'%')),
+                armor : new Property('Replenish Life' , new PropertyValue(7)),
+                helmet : new Property('Replenish Life' , new PropertyValue(7)),
+                shield : new Property('Replenish Life' , new PropertyValue(7))
             };
 
             this.rank = 14;
@@ -424,9 +424,9 @@ export class PD2Runes extends RuneFactory {
 
             this.properties = {
                 weapon : new Property('Attack Rating' , new PropertyValue(20, '%')),
-                armor : new Property('Maximum Poison Resistance' , new PropertyValue(4, '%')),
-                helmet : new Property('Maximum Poison Resistance' , new PropertyValue(4, '%')),
-                shield : new Property('Maximum Poison Resistance' , new PropertyValue(4, '%'))
+                armor : new Property('Maximum Poison Resistance' , new PropertyValue(5, '%')),
+                helmet : new Property('Maximum Poison Resistance' , new PropertyValue(5, '%')),
+                shield : new Property('Maximum Poison Resistance' , new PropertyValue(5, '%'))
             };
 
             this.rank = 25;
@@ -440,9 +440,9 @@ export class PD2Runes extends RuneFactory {
 
             this.properties = {
                 weapon : new Property('Mana Stolen per Hit' , new PropertyValue(7, '%')),
-                armor : new Property('Maximum Fire Resistance' , new PropertyValue(4, '%')),
-                helmet : new Property('Maximum Fire Resistance' , new PropertyValue(4, '%')),
-                shield : new Property('Maximum Fire Resistance' , new PropertyValue(4, '%'))
+                armor : new Property('Maximum Fire Resistance' , new PropertyValue(5, '%')),
+                helmet : new Property('Maximum Fire Resistance' , new PropertyValue(5, '%')),
+                shield : new Property('Maximum Fire Resistance' , new PropertyValue(5, '%'))
             };
 
             this.rank = 26;
@@ -456,9 +456,9 @@ export class PD2Runes extends RuneFactory {
 
             this.properties = {
                 weapon : new Property('Enhanced Damage' , new PropertyValue(50, '%')),
-                armor : new Property('Maximum Cold Resistance' , new PropertyValue(4, '%')),
-                helmet : new Property('Maximum Cold Resistance' , new PropertyValue(4, '%')),
-                shield : new Property('Maximum Cold Resistance' , new PropertyValue(4, '%'))
+                armor : new Property('Maximum Cold Resistance' , new PropertyValue(5, '%')),
+                helmet : new Property('Maximum Cold Resistance' , new PropertyValue(5, '%')),
+                shield : new Property('Maximum Cold Resistance' , new PropertyValue(5, '%'))
             };
 
             this.rank = 27;
@@ -472,9 +472,9 @@ export class PD2Runes extends RuneFactory {
 
             this.properties = {
                 weapon : new Property('Deadly Strike' , new PropertyValue(20, '%')),
-                armor : new Property('Maximum Lightning Resistance' , new PropertyValue(4, '%')),
-                helmet : new Property('Maximum Lightning Resistance' , new PropertyValue(4, '%')),
-                shield : new Property('Maximum Lightning Resistance' , new PropertyValue(4, '%'))
+                armor : new Property('Maximum Lightning Resistance' , new PropertyValue(5, '%')),
+                helmet : new Property('Maximum Lightning Resistance' , new PropertyValue(5, '%')),
+                shield : new Property('Maximum Lightning Resistance' , new PropertyValue(5, '%'))
             };
 
             this.rank = 28;
@@ -487,7 +487,7 @@ export class PD2Runes extends RuneFactory {
             super();
 
             this.properties = {
-                weapon : new Property('Life After Each Kill' , new PropertyValue(4)),
+                weapon : new Property('Hit Blinds Target' , false),
                 armor : new Property('Maximum Mana' , new PropertyValue(5, '%')),
                 helmet : new Property('Maximum Mana' , new PropertyValue(5, '%')),
                 shield : new Property('Mana' , new PropertyValue(50, ))
@@ -504,9 +504,9 @@ export class PD2Runes extends RuneFactory {
 
             this.properties = {
                 weapon : new Property('Chance of Crushing Blow' , new PropertyValue(20 , '%')),
-                armor : new Property('Damage Reduced' , new PropertyValue(4, '%')),
-                helmet : new Property('Damage Reduced' , new PropertyValue(4, '%')),
-                shield : new Property('Damage Reduced' , new PropertyValue(4, '%'))
+                armor : new Property('Damage Reduced' , new PropertyValue(8, '%')),
+                helmet : new Property('Damage Reduced' , new PropertyValue(8, '%')),
+                shield : new Property('Damage Reduced' , new PropertyValue(8, '%'))
             };
 
             this.rank = 30;

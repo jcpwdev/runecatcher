@@ -13,7 +13,7 @@ $atom: 8px;
   font-style:normal;
   font-weight:700;
   font-display:auto;
-  src: url("../fonts/exocet-bold.woff2") format("woff2"), url("../fonts/exocet-bold.woff") format("woff");
+  src: url("../../public/fonts/exocet-bold.woff2") format("woff2"), url("../../public/fonts/exocet-bold.woff") format("woff");
 }
 
 @font-face {
@@ -21,7 +21,7 @@ $atom: 8px;
   font-style:normal;
   font-weight: 300;
   font-display:auto;
-  src: url("../fonts/exocet-light.woff2") format("woff2"), url("../fonts/exocet-light.woff") format("woff");
+  src: url("../../public/fonts/exocet-light.woff2") format("woff2"), url("../../public/fonts/exocet-light.woff") format("woff");
 }
 
 * {
@@ -292,4 +292,5 @@ body {
   text-align: center;
   padding: $atom*2;
 }
-@import "choicesjs";
+
+@import "choicesjs.module";

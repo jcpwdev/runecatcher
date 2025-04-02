@@ -1,6 +1,6 @@
 import choices from "choices.js";
-import Bases from "./bases";
-import {makeSlugReadable} from "./basics";
+import Bases from "./bases.js";
+import {makeSlugReadable} from "./basics.js";
 
 class Search {
 
@@ -154,11 +154,11 @@ class Search {
 
             if (parameters.properties) {
                 checks++;
+
                 let directRunewordHit = false;
                 let propertiesFound = 0;
 
                 for (let searchProperty of parameters.properties) {
-
 
                     if(searchProperty.indexOf('RW:') === 0 && searchProperty.substr(3) == runeword.name) {
                         propertiesFound++;
@@ -166,7 +166,9 @@ class Search {
                         break;
                     }
 
+
                     runeword.getProperties().map(function (property) {
+
 
                         if (searchProperty.toLowerCase() == property.name.toLowerCase()) {
                             propertiesFound++;
@@ -239,10 +241,12 @@ class Search {
             }
 
 
+
             if (passedChecks >= checks) {
                 hits.push(runeword);
             }
         }
+
 
         this.resultsCount = hits.length;
         this.resultList = hits;

@@ -12,6 +12,5 @@ You need `node >= 18`
 The Runecatcher App can be run locally, plain in your browser with `vite`.
 1. Clone the "main" branch of this repo
 2. `npm install`
-3. if using Node > 16, set `export NODE_OPTIONS=--openssl-legacy-provider` via Terminal
-4. `npm run dev`
-5. open `localhost:5173` or whatever your vite port is
+3. `npm run dev`
+4. open `localhost:5173` or whatever your vite port is

@@ -1782,7 +1782,7 @@ class PlagueRuneword extends Runeword {
         ];
 
 
-        this.bases = [Bases.claws, Bases.swords]; // todo: dagger
+        this.bases = [Bases.claws, Bases.swords, Bases.daggers];
 
         this.properties = [
             new PropertyCastChance(new Skill("Poison Nova", 15), new PropertyValue(25, "%"), "strike"),
@@ -1985,6 +1985,56 @@ class HustleRuneword extends Runeword {
     }
 }
 
+class MosaicRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("mal"),
+            Runes.get("gul"),
+            Runes.get("amn")
+        ];
+
+
+        this.bases = [Bases.claws];
+
+        this.properties = [
+            new Property("chance for finishing moves to not consume charges", new PropertyValue(50, "%")),
+            new Property("Martial Arts Skills", new PropertyValue(2), true, "Assassin"),
+            new Property("Increased Attack Speed", new PropertyValue(20, "%")),
+            new Property("Enhanced Damage", new PropertyValueVaries(200,250, "%")),
+            new Property("Cold Skill Damage", new PropertyValueVaries(8,15, "%")),
+            new Property("Fire Skill Damage", new PropertyValueVaries(8,15, "%")),
+            new Property("Lighting Skill Damage", new PropertyValueVaries(8,15, "%")),
+        ];
+    }
+}
+
+class MetamorphosisRuneword extends Runeword {
+    constructor() {
+        super();
+
+        this.runes = [
+            Runes.get("io"),
+            Runes.get("cham"),
+            Runes.get("fal")
+        ];
+
+
+        this.bases = Bases.allHelmets();
+
+        this.properties = [
+            new Property("Werewolf strikes grant Mark of the Wolf for 180 seconds", false),
+            new Property("Werebear strikes grant Mark of the Bear for 180 seconds", false),
+            new Property("Physical Damage Reduced", new PropertyValue(20, "%")),
+            new Property("Shape Shifting Skills", new PropertyValue(5), true, "Druid"),
+            new Property("Crushing Blow", new PropertyValue(25, "%")),
+            new Property("Enhanced Defense", new PropertyValueVaries(50, 80, "%")),
+            new Property("All Resistances", new PropertyValue(10, "%"))
+        ];
+    }
+}
+
 
 
 var ClassicRunewords = [
@@ -2084,8 +2134,9 @@ var ClassicRunewords = [
     new HearthRuneword,
     new GroundRuneword,
     new HustleRuneword(Bases.allWeapons()),
-    new HustleRuneword(Bases.allArmors())
-
+    new HustleRuneword(Bases.allArmors()),
+    new MosaicRuneword,
+    new MetamorphosisRuneword
 ];
 
 export default ClassicRunewords;

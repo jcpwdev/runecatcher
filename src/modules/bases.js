@@ -55,6 +55,11 @@ let Bases = {
         slot : 'weapon'
     },
 
+    daggers: {
+        name : 'Daggers',
+        slot : 'weapon'
+    },
+
     axes : {
         name : 'Axes',
         slot : 'weapon'
